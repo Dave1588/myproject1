@@ -198,7 +198,7 @@
             </div>
         </div>
     </div>  
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" 
+    <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel" 
          data-bs-interval="3000" 
          data-bs-pause="hover" 
          data-bs-wrap="true" 
@@ -208,9 +208,9 @@
     <!-- 循環播放 -->
         <!-- 指示器 -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1" style="width: 15px; height: 15px; "></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" class="rounded-circle" aria-label="Slide 2" style="width: 15px; height: 15px; "></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" class="rounded-circle" aria-label="Slide 3" style="width: 15px; height: 15px; "></button>
+            <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1" style="width: 15px; height: 15px; "></button>
+            <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="1" class="rounded-circle" aria-label="Slide 2" style="width: 15px; height: 15px; "></button>
+            <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="2" class="rounded-circle" aria-label="Slide 3" style="width: 15px; height: 15px; "></button>
         </div>
         
         <!-- 輪播內容 -->
@@ -227,11 +227,11 @@
         </div>
         
         <!-- 左右箭頭 -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -332,8 +332,10 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                         <div class="carousel-container">
-                          <!-- 左箭頭按鈕 -->
+                          <!-- 左箭頭按鈕 移到分類外面 -->
                           <button class="carousel-btn carousel-btn-left" onclick="moveLeft()">❮</button>
+                          <!-- 右箭頭按鈕 移到分類外面 -->
+                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()">❯</button>
                           
                           <div class="carousel">
                             <!-- 顯示9個卡片 -->
@@ -419,16 +421,373 @@
                               </div>
                             </div>
                           </div>
-                          
-                          <!-- 右箭頭按鈕 -->
-                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()">❯</button>
                         </div>
                     </div>
                     <!-- 其他分類的內容可以在這裡添加 -->
-                    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">分類二的內容</div>
-                    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">分類三的內容</div>
-                    <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">分類四的內容</div>
-                    <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">分類五的內容</div>
+                    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                        <div class="carousel-container">
+                          <button class="carousel-btn carousel-btn-left" onclick="moveLeft()">❮</button>
+                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()">❯</button>
+                          <div class="carousel">
+                            <!-- 顯示9個卡片 -->
+                            <div class="carousel-card">
+                              <div class="card" style="width: 18rem;">
+                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                <div class="card-body">
+                                  <h5 class="card-title">目的地 1</h5>
+                                  <p class="card-text">這是目的地 1 的介紹文字。</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 2</h5>
+                                    <p class="card-text">這是目的地 2 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 3</h5>
+                                    <p class="card-text">這是目的地 3 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 4</h5>
+                                    <p class="card-text">這是目的地 4 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 5</h5>
+                                    <p class="card-text">這是目的地 5 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 6</h5>
+                                    <p class="card-text">這是目的地 6 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 7</h5>
+                                    <p class="card-text">這是目的地 7 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 8</h5>
+                                    <p class="card-text">這是目的地 8 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 9</h5>
+                                    <p class="card-text">這是目的地 9 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                            <!-- ... 其他卡片 ... -->
+                          </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                        <div class="carousel-container">
+                          <button class="carousel-btn carousel-btn-left" onclick="moveLeft()">❮</button>
+                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()">❯</button>
+                          <div class="carousel">
+                            <!-- 顯示9個卡片 -->
+                            <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 1</h5>
+                                    <p class="card-text">這是目的地 1 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 2</h5>
+                                      <p class="card-text">這是目的地 2 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 3</h5>
+                                      <p class="card-text">這是目的地 3 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 4</h5>
+                                      <p class="card-text">這是目的地 4 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 5</h5>
+                                      <p class="card-text">這是目的地 5 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 6</h5>
+                                      <p class="card-text">這是目的地 6 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 7</h5>
+                                      <p class="card-text">這是目的地 7 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 8</h5>
+                                      <p class="card-text">這是目的地 8 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 9</h5>
+                                      <p class="card-text">這是目的地 9 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                            <!-- ... 其他卡片 ... -->
+                          </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                        <div class="carousel-container">
+                          <button class="carousel-btn carousel-btn-left" onclick="moveLeft()">❮</button>
+                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()">❯</button>
+                          <div class="carousel">
+                            <!-- 顯示9個卡片 -->
+                            <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 1</h5>
+                                    <p class="card-text">這是目的地 1 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 2</h5>
+                                      <p class="card-text">這是目的地 2 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 3</h5>
+                                      <p class="card-text">這是目的地 3 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 4</h5>
+                                      <p class="card-text">這是目的地 4 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 5</h5>
+                                      <p class="card-text">這是目的地 5 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 6</h5>
+                                      <p class="card-text">這是目的地 6 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 7</h5>
+                                      <p class="card-text">這是目的地 7 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 8</h5>
+                                      <p class="card-text">這是目的地 8 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 9</h5>
+                                      <p class="card-text">這是目的地 9 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                            <!-- ... 其他卡片 ... -->
+                          </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                        <div class="carousel-container">
+                          <button class="carousel-btn carousel-btn-left" onclick="moveLeft()">❮</button>
+                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()">❯</button>
+                          <div class="carousel">
+                            <!-- 顯示9個卡片 -->
+                            <div class="carousel-card">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                  <div class="card-body">
+                                    <h5 class="card-title">目的地 1</h5>
+                                    <p class="card-text">這是目的地 1 的介紹文字。</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 2</h5>
+                                      <p class="card-text">這是目的地 2 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 3</h5>
+                                      <p class="card-text">這是目的地 3 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 4</h5>
+                                      <p class="card-text">這是目的地 4 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 5</h5>
+                                      <p class="card-text">這是目的地 5 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 6</h5>
+                                      <p class="card-text">這是目的地 6 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 7</h5>
+                                      <p class="card-text">這是目的地 7 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 8</h5>
+                                      <p class="card-text">這是目的地 8 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-card">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">目的地 9</h5>
+                                      <p class="card-text">這是目的地 9 的介紹文字。</p>
+                                    </div>
+                                  </div>
+                                </div>
+                            <!-- ... 其他卡片 ... -->
+                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div>
@@ -475,6 +834,6 @@
     <!-- 自定義 JS -->
     <script src="js/dropdown.js"></script>
     <script src="js/cardcarousel.js"></script>
-    <script src="js/tabSwitcher.js"></script>
+    <!-- <script src="js/tabSwitcher.js"></script> -->
 </body>
 </html>
