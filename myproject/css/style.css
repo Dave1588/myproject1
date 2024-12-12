@@ -28,3 +28,39 @@
 .footer-social .social-links a:last-child {
     margin-right: 0;
 } 
+
+/* 這裡是main的tab圖 */
+.main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .category-buttons .btn {
+    margin-right: 0.5rem;
+  }
+  .large-image {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+  }
+  .small-image {
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+  }
