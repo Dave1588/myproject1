@@ -37,3 +37,6 @@ function switchCategory(index) {
         document.getElementById(`small-image-link-${i + 1}`).href = category.links[i + 1];
     });
 }
+
+// 初始化：預設顯示第一個分類
+switchCategory(0);
