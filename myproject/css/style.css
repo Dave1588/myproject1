@@ -1,0 +1,30 @@
+/* 底部應用程式下載連結的 hover 效果 */
+.footer-app-info .app-download-link {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-app-info .app-download-link:hover {
+    color: #ffffff;
+    transform: translateX(5px); /* 添加一個小的平移效果 */
+}
+
+/* 社交媒體連結的 hover 效果 */
+.footer-social .social-links a {
+    color: #f0f0f0;
+    font-size: 24px;
+    margin-right: 1.5rem; /* 增加間距 */
+    display: inline-block; /* 確保 transform 生效 */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-social .social-links a:hover {
+    color: #ffffff;
+    transform: scale(1.3); /* 稍微放大一點 */
+}
+
+/* 最後一個社交連結不需要右邊距 */
+.footer-social .social-links a:last-child {
+    margin-right: 0;
+} 
