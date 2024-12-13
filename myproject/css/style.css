@@ -448,3 +448,112 @@ footer a:hover {
 .swap-btn i {
     font-size: 1.1rem;
 }
+
+/* 日期輸入框樣式 */
+.date-input-group input[type="date"] {
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.date-input-group input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 5px;
+    margin-right: -8px;
+    opacity: 0.6;
+}
+
+.date-input-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* 禁用狀態樣式 */
+.date-input-group input[type="date"]:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* 錯誤狀態樣式 */
+.date-input-group.is-invalid input[type="date"] {
+    border-color: #dc3545;
+}
+
+.date-input-group.is-invalid .input-group-text {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+/* 人數選擇下拉選單樣式 */
+.passenger-select-btn {
+    white-space: normal;
+    min-height: 38px;
+    height: auto;
+}
+
+.passenger-dropdown {
+    width: 380px !important;  /* 增加下拉選單寬度 */
+    max-width: none !important;
+    padding: 1rem !important;  /* 增加內部間距 */
+}
+
+.passenger-type {
+    padding: 12px 0;  /* 增加每個選項的上下間距 */
+    border-bottom: 1px solid #dee2e6;
+}
+
+.passenger-type:last-child {
+    border-bottom: none;
+}
+
+/* 調整數字調整器的間距 */
+.number-spinner {
+    min-width: 120px;  /* 確保數字調整器有足夠空間 */
+    text-align: right;
+}
+
+.number-spinner button {
+    width: 32px;  /* 稍微加大按鈕 */
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;  /* 增加按鈕之間的間距 */
+}
+
+.number-spinner span {
+    min-width: 24px;  /* 確保數字有固定寬度 */
+    text-align: center;
+    display: inline-block;
+}
+
+.number-spinner button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 確保下拉選單不會被截斷 */
+.dropdown-menu.show {
+    transform: none !important;
+}
+
+/* 調整文字區域的寬度 */
+.passenger-type .d-flex > div:first-child {
+    flex: 1;  /* 讓文字區域佔據剩餘空間 */
+    margin-right: 1rem;  /* 增加與按鈕的間距 */
+}
+
+/* Toast 樣式 */
+.toast-container {
+    z-index: 1500;  /* 確保顯示在下拉選單上方 */
+}
+
+.toast {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.toast-body {
+    color: #dc3545;  /* 使用紅色顯示警告訊息 */
+    font-weight: 500;
+}

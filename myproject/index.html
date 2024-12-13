@@ -12,6 +12,17 @@
     <title>神遊網</title>
 </head>
 <body>
+    <!-- 在 body 內的最外層添加 Toast 容器 -->
+    <div class="toast-container position-fixed top-50 start-50 translate-middle">
+        <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" id="passengerToast">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <!-- Toast 訊息內容會在 JS 中動態設置 -->
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
     <!-- header區塊: 用於定義頁面的頂部區域 -->
      <div header>
         <div class="headerbox">
@@ -270,7 +281,7 @@
                             </div>
                         </div>
 
-                        <!-- 添加交換按鈕 -->
+                        <!-- 交換按鈕 -->
                         <div class="col-auto d-flex align-items-center">
                             <button type="button" class="btn btn-outline-secondary swap-btn" onclick="swapLocations()">
                                 <i class="bi bi-arrow-left-right"></i>
@@ -362,19 +373,90 @@
                         </div>
                     </div>
 
-                    <!-- 第三列：日期選擇 -->
+                    <!-- 第三列：日期和人數選擇 -->
                     <div class="row g-3 mb-3">
-                        <div class="col-md-2">
-                            <input type="date" class="form-control">
+                        <!-- 去程日期 -->
+                        <div class="col-md-3">
+                            <div class="input-group date-input-group">
+                                <span class="input-group-text fw-bold">去程日期</span>
+                                <input type="date" 
+                                       class="form-control" 
+                                       id="departure-date" 
+                                       min="" 
+                                       data-bs-toggle="tooltip" 
+                                       data-bs-placement="top" 
+                                       title="選擇去程日期">
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <input type="date" class="form-control">
+
+                        <!-- 回程日期 -->
+                        <div class="col-md-3">
+                            <div class="input-group date-input-group">
+                                <span class="input-group-text fw-bold">回程日期</span>
+                                <input type="date" 
+                                       class="form-control" 
+                                       id="return-date" 
+                                       min="" 
+                                       data-bs-toggle="tooltip" 
+                                       data-bs-placement="top" 
+                                       title="選擇回程日期">
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <select class="form-select">
-                                <option value="1成人">1 成人</option>
-                                <option value="2成人">2 成人</option>
-                            </select>
+
+                        <!-- 人數選擇 -->
+                        <div class="col-md-4">
+                            <div class="dropdown w-100" id="people-dropdown">
+                                <button class="form-control text-start dropdown-toggle passenger-select-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="fw-bold">人數</span>
+                                    <span class="selected-text text-muted">請選擇</span>
+                                </button>
+                                <div class="dropdown-menu passenger-dropdown p-3">
+                                    <!-- 成人選擇 -->
+                                    <div class="passenger-type mb-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <div class="fw-bold">成人</div>
+                                                <small class="text-muted">12歲以上</small>
+                                            </div>
+                                            <div class="number-spinner">
+                                                <button class="btn btn-outline-secondary btn-sm" onclick="adjustPassenger('adult', -1, event)">-</button>
+                                                <span class="mx-2 fw-bold" id="adult-count">1</span>
+                                                <button class="btn btn-outline-secondary btn-sm" onclick="adjustPassenger('adult', 1, event)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 孩童選擇 -->
+                                    <div class="passenger-type mb-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <div class="fw-bold">孩童</div>
+                                                <small class="text-muted">2-11歲</small>
+                                            </div>
+                                            <div class="number-spinner">
+                                                <button class="btn btn-outline-secondary btn-sm" onclick="adjustPassenger('child', -1, event)">-</button>
+                                                <span class="mx-2 fw-bold" id="child-count">0</span>
+                                                <button class="btn btn-outline-secondary btn-sm" onclick="adjustPassenger('child', 1, event)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 嬰兒選擇 -->
+                                    <div class="passenger-type">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <div class="fw-bold">嬰兒</div>
+                                                <small class="text-muted">2歲以下</small>
+                                            </div>
+                                            <div class="number-spinner">
+                                                <button class="btn btn-outline-secondary btn-sm" onclick="adjustPassenger('infant', -1, event)">-</button>
+                                                <span class="mx-2 fw-bold" id="infant-count">0</span>
+                                                <button class="btn btn-outline-secondary btn-sm" onclick="adjustPassenger('infant', 1, event)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1029,5 +1111,7 @@
     <script src="js/cardcarousel.js"></script>
     <script src="js/switchCategory.js"></script>
     <script src="js/locationSelect.js"></script>
+    <script src="js/dateSelect.js"></script>
+    <script src="js/passengerSelect.js"></script>
 </body>
 </html>
