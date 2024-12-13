@@ -1,71 +1,247 @@
-/* 底部應用程式下載連結的 hover 效果 */
-.footer-app-info .app-download-link {
+/* ====================================
+   1. 基礎容器設定
+   ==================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 大螢幕寬度設定 (≥ 1200px) */
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+/* ====================================
+   2. Header 相關樣式
+   ==================================== */
+.header {
+    width: 100%;
+}
+
+.horizontal-block {
+    width: 100%;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Header 社群圖標區域 */
+.header-social-icon {
+    display: flex;
+    align-items: center;
+}
+
+.header-social-icon > * {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.header-social-icon > *:last-child {
+    margin-right: 0;
+}
+
+/* ====================================
+   3. 搜尋框樣式
+   ==================================== */
+.search-box {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================================
+   4. 卡片輪播區域
+   ==================================== */
+#cardcarousel .carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#cardcarousel .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+#cardcarousel .carousel-card {
+    margin: 0 10px;
+}
+
+/* 輪播按鈕樣式 */
+#cardcarousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+#cardcarousel .carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#cardcarousel .carousel-btn-left {
+    left: 10px;
+}
+
+#cardcarousel .carousel-btn-right {
+    right: 10px;
+}
+
+#cardcarousel .card {
+    width: 18rem;
+}
+
+/* ====================================
+   5. Footer 樣式
+   ==================================== */
+/* 基本設定 */
+footer {
+    background-color: #333;
+    color: #ffffff;
+}
+
+footer a {
     color: #f0f0f0;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: color 0.3s ease;
 }
 
-.footer-app-info .app-download-link:hover {
+footer a:hover {
     color: #ffffff;
-    transform: translateX(5px); /* 添加一個小的平移效果 */
+    text-decoration: underline;
 }
 
-/* 社交媒體連結的 hover 效果 */
-.footer-social .social-links a {
+/* Footer 標題 */
+.footerT1 {
+    font-size: 20px;
+    word-break: keep-all;
+    color: #ffffff;
+}
+
+/* Footer 導航連結 */
+.footer .nav-link {
     color: #f0f0f0;
+    margin: 0 20px;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.footer .nav-link:hover {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+/* Footer 服務區塊 */
+.footer .footer-services .footer-title {
+    color: #ffffff;
+}
+
+.footer .footer-services ul a {
+    color: #f0f0f0;
+    line-height: 1.8;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-services ul a:hover {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+/* Footer 版權與隱私政策 */
+.footer .copyright,
+.footer .privacy-policy {
+    color: #f4f4f4;
+}
+
+.footer .privacy-policy:hover {
+    color: #4fc3f7;
+}
+
+/* Footer 分隔線 */
+.footer-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2376c9 0%, #2376c9 50%, transparent 100%);
+    margin: 30px 0;
+    opacity: 0.7;
+}
+
+/* ====================================
+   6. 社群媒體圖標區域
+   ==================================== */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-icon {
     font-size: 24px;
-    margin-right: 1.5rem; /* 增加間距 */
-    display: inline-block; /* 確保 transform 生效 */
+    color: #f0f0f0;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.footer-social .social-links a:hover {
+.social-icon:hover {
     color: #ffffff;
-    transform: scale(1.3); /* 稍微放大一點 */
+    transform: scale(1.3);
+    color: #4fc3f7;
 }
 
-/* 最後一個社交連結不需要右邊距 */
-.footer-social .social-links a:last-child {
-    margin-right: 0;
-} 
+/* 社群媒體RWD設定 */
+@media (max-width: 768px) {
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-items: center;
+    }
+    
+    .social-icon {
+        margin: 0;
+    }
+}
 
-/* 這裡是main的tab圖 */
-.main-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  .category-buttons .btn {
-    margin-right: 0.5rem;
-  }
-  .large-image {
+/* ====================================
+   7. QR碼樣式
+   ==================================== */
+.rounded-qr {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.rounded-qr img {
+    width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-    font-size: 14px;
-    text-align: center;
-  }
-  .small-image {
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-    font-size: 12px;
-    text-align: center;
-  }
+    object-fit: cover;
+    border-radius: 15px;
+}
 
-/* 在 /css/style.css 中新增或修改以下樣式 */
+/* ====================================
+   8. 圖片區塊樣式
+   ==================================== */
 .image-section {
     max-width: 1100px;
     margin: 0 auto;
@@ -73,13 +249,13 @@
 
 .image-container1 {
     display: flex;
-    flex-wrap: wrap; /* 允許換行 */
-    gap: 20px; /* 添加統一的間距 */
-    justify-content: flex-start; /* 改為靠左對齊，避免最後一行間距不均 */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
 .image-wrapper {
-    flex: 1 1 calc(33.33% - 14px); /* 調整寬度計算：(間距20px * 2) ÷ 3 ≈ 14px */
+    flex: 1 1 calc(33.33% - 14px);
     position: relative;
 }
 
@@ -90,58 +266,68 @@
     background-position: center;
     background-color: #f0f0f0;
     border-radius: 15px;
-    position: relative; /* 添加相對定位 */
+    position: relative;
     background-image: url('https://via.placeholder.com/300x200');
 }
 
-/* 文字容器樣式 */
+/* 圖片文字覆蓋層 */
 .image-text {
     position: absolute;
-    bottom: 10px; /* 距離底部的距離 */
+    bottom: 10px;
     left: 0;
     right: 0;
-    padding: 0 15px; /* 左右內邊距 */
+    padding: 0 15px;
     display: flex;
-    justify-content: space-between; /* 左右兩端對齊 */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* 左側文字樣式 */
-.image-text .text-left {
-    color: white; /* 文字顏色 */
-    font-size: 14px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* 文字陰影 */
-}
-
-/* 右側文字樣式 */
+.image-text .text-left,
 .image-text .text-right {
     color: white;
     font-size: 14px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
-/* 可選：添加漸層背景使文字更容易閱讀 */
+/* 圖片漸層效果 */
 .image::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50%; /* 漸層高度 */
+    height: 50%;
     background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-    border-radius: 0 0 15px 15px; /* 保持底部圓角 */
-    pointer-events: none; /* 確保不會影響點擊事件 */
+    border-radius: 0 0 15px 15px;
+    pointer-events: none;
 }
 
-/* 響應式設計 */
+/* ====================================
+   9. RWD 響應式設計
+   ==================================== */
 @media (max-width: 768px) {
     .image-wrapper {
-        flex: 1 1 calc(50% - 10px); /* 兩列時的寬度計算 */
+        flex: 1 1 calc(50% - 10px);
     }
 }
 
 @media (max-width: 480px) {
     .image-wrapper {
-        flex: 1 1 100%; /* 一列時佔滿寬度 */
+        flex: 1 1 100%;
     }
+}
+
+/* App下載連結的樣式 */
+.app-download-link {
+    /* 基本樣式 */
+    text-decoration: none;
+    color: #ffffff;  /* 可以根據需要調整顏色 */
+    transition: transform 0.3s ease;  /* 添加平滑過渡效果 */
+    display: inline-block;  /* 確保transform能夠正常工作 */
+}
+
+.app-download-link:hover {
+    transform: translateX(5px);  /* hover時向右移動5px */
+    text-decoration: none;  /* 移除hover時的底線 */
+    color: #4fc3f7;
 }
