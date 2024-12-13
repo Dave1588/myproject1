@@ -7,6 +7,7 @@
     <link rel="icon" href="./img/god-svgrepo-com.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     
     <title>神遊網</title>
 </head>
@@ -139,68 +140,264 @@
     </div>
 <!-- 這裡開始是searchengine -->
     <div class="search-box">
-        <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-flights">機票</button>
-        </li>
-        <li class="nav-item">
-            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-hotels">訂房</button>
-        </li>
-        <li class="nav-item">
-            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-packages">國外旅遊</button>
-        </li>
+        <ul class="nav nav-tabs d-flex">
+            <li class="nav-item flex-fill">
+                <button class="nav-link active w-100" data-bs-toggle="tab" data-bs-target="#tab-flights">機票</button>
+            </li>
+            <li class="nav-item flex-fill">
+                <button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#tab-hotels">訂房</button>
+            </li>
+            <li class="nav-item flex-fill">
+                <button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#tab-group">團體</button>
+            </li>
+            <li class="nav-item flex-fill">
+                <button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#tab-hsr">高鐵旅行</button>
+            </li>
+            <li class="nav-item flex-fill">
+                <button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#tab-local">票券當地遊</button>
+            </li>
         </ul>
         <div class="tab-content mt-3">
-        <div class="tab-pane fade show active" id="tab-flights">
-            <form>
-            <div class="row g-3">
-                <div class="col-md-2">
-                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="country" id="country1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="country1">國外</label>
+            <div class="tab-pane fade show active" id="tab-flights">
+                <form>
+                    <!-- 第一列：來回/單程選擇 -->
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <div class="btn-group w-100" role="group" aria-label="Trip type selection">
+                                <input type="radio" class="btn-check" name="tripType" id="roundTrip" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="roundTrip">來回</label>
 
-                        <input type="radio" class="btn-check" name="country" id="country2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="country2">國內</label>
+                                <input type="radio" class="btn-check" name="tripType" id="oneWay" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="oneWay">單程</label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-2">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tripType" id="roundTrip" checked>
-                    <label class="form-check-label" for="roundTrip">來回</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tripType" id="oneWay">
-                    <label class="form-check-label" for="oneWay">單程</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tripType" id="multiCity">
-                    <label class="form-check-label" for="multiCity">多行程</label>
-                </div>
-                </div>
-                <div class="col-md-3">
-                <input type="text" class="form-control" placeholder="出發地">
-                </div>
-                <div class="col-md-3">
-                <input type="text" class="form-control" placeholder="目的地">
-                </div>
-                <div class="col-md-2">
-                <input type="date" class="form-control">
-                </div>
-                <div class="col-md-2">
-                <input type="date" class="form-control">
-                </div>
-                <div class="col-md-2">
-                <select class="form-select">
-                    <option value="1成人">1 成人</option>
-                    <option value="2成人">2 成人</option>
-                </select>
-                </div>
-                <div class="col-md-3">
-                <button type="submit" class="btn btn-success w-100">搜尋</button>
-                </div>
+
+                    <!-- 第二列：出發地和目的地選擇 -->
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-3">
+                            <div class="dropdown w-100" id="departure-dropdown">
+                                <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="fw-bold">出發地</span>
+                                    <span class="selected-text text-muted">請選擇</span>
+                                </button>
+                                <div class="dropdown-menu location-dropdown p-3">
+                                    <!-- 分類標籤 -->
+                                    <ul class="nav nav-tabs mb-3" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#taiwan-dep-drop" type="button">台灣</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#japan-dep-drop" type="button">日本</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#korea-dep-drop" type="button">韓國</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#china-dep-drop" type="button">大陸港澳</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#asia-dep-drop" type="button">東南亞</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#america-dep-drop" type="button">美洲</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#europe-dep-drop" type="button">歐洲</button>
+                                        </li>
+                                    </ul>
+
+                                    <!-- 分類內容 -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="taiwan-dep-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">台北 桃園/松山</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">高雄</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">台中</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">台南</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="japan-dep-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">東京</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">大阪</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">沖繩</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">熊本</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="korea-dep-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">首爾</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">釜山</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">濟州島</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">大邱</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="china-dep-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">香港</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">澳門</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">上海</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">北京</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="asia-dep-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">曼谷</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">新加坡</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">峇里島</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">吉隆坡</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="america-dep-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">洛杉磯</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">舊金山</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">溫哥華</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">紐約</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="europe-dep-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">倫敦</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">巴黎</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">阿姆斯特丹</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'departure')">維也納</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 添加交換按鈕 -->
+                        <div class="col-auto d-flex align-items-center">
+                            <button type="button" class="btn btn-outline-secondary swap-btn" onclick="swapLocations()">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="dropdown w-100" id="destination-dropdown">
+                                <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="fw-bold">目的地</span>
+                                    <span class="selected-text text-muted">請選擇</span>
+                                </button>
+                                <div class="dropdown-menu location-dropdown p-3">
+                                    <!-- 分類標籤 -->
+                                    <ul class="nav nav-tabs mb-3" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#japan-dest-drop" type="button">日本</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#korea-dest-drop" type="button">韓國</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#china-dest-drop" type="button">大陸港澳</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#asia-dest-drop" type="button">東南亞</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#america-dest-drop" type="button">美洲</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#europe-dest-drop" type="button">歐洲</button>
+                                        </li>
+                                    </ul>
+
+                                    <!-- 分類內容 -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="japan-dest-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">東京</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">大阪</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">沖繩</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">熊本</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="korea-dest-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">首爾</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">釜山</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">濟州島</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">大邱</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="china-dest-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">香港</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">澳門</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">上海</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">北京</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="asia-dest-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">曼谷</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">新加坡</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">峇里島</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">吉隆坡</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="america-dest-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">洛杉磯</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">舊金山</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">溫哥華</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">紐約</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="europe-dest-drop">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">倫敦</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">巴黎</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">阿姆斯特丹</button>
+                                                <button class="btn btn-outline-secondary text-start" onclick="selectLocation(this, 'destination')">維也納</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第三列：日期選擇 -->
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-2">
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-select">
+                                <option value="1成人">1 成人</option>
+                                <option value="2成人">2 成人</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 第三列：搜尋按鈕 -->
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success" style="width: 120px;">搜尋</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            </form>
-        </div>
+            <div class="tab-pane fade" id="tab-hotels">
+                <!-- 訂房的內容 -->
+            </div>
+            <div class="tab-pane fade" id="tab-group">
+                <!-- 團體的內容 -->
+            </div>
+            <div class="tab-pane fade" id="tab-hsr">
+                <!-- 高鐵旅行的內容 -->
+            </div>
+            <div class="tab-pane fade" id="tab-local">
+                <!-- 票券當地遊的內容 -->
+            </div>
         </div>
     </div>
 <!-- 這裡開始是main -->
@@ -831,5 +1028,6 @@
     <script src="js/dropdown.js"></script>
     <script src="js/cardcarousel.js"></script>
     <script src="js/switchCategory.js"></script>
+    <script src="js/locationSelect.js"></script>
 </body>
 </html>

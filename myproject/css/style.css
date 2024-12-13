@@ -331,3 +331,120 @@ footer a:hover {
     text-decoration: none;  /* 移除hover時的底線 */
     color: #4fc3f7;
 }
+
+/* QR Code 的基本樣式 */
+.app-qr-code img {
+    width: 100%; /* 或設定具體尺寸，例如 200px */
+    height: auto;
+    display: block;
+}
+
+/* 在螢幕寬度小於 576px 時的樣式 */
+@media (max-width: 575.98px) {
+    .app-qr-code img {
+        width: 50%; /* 縮小到原始大小的 50% */
+    }
+}
+
+/* 自定義按鈕組樣式 */
+.btn-group .btn-outline-primary {
+    border-color: #198754;
+    color: #198754;
+}
+
+.btn-group .btn-outline-primary:hover,
+.btn-group .btn-check:checked + .btn-outline-primary {
+    background-color: #198754;
+    border-color: #198754;
+    color: white;
+}
+
+/* 表單間距調整 */
+.form-control, .form-select {
+    height: 38px;
+}
+
+/* 按鈕組寬度設定 */
+.btn-group {
+    display: flex;
+}
+
+.btn-group .btn {
+    flex: 1;  /* 讓每個按鈕平均分配寬度 */
+    white-space: nowrap;  /* 防止文字換行 */
+}
+
+/* 下拉選單樣式 */
+.location-dropdown {
+    width: 320px;  /* 設定下拉選單寬度 */
+    max-height: 400px;  /* 設定最大高度 */
+    overflow-y: auto;  /* 允許垂直滾動 */
+}
+
+/* 分類標籤樣式 */
+.location-dropdown .nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.location-dropdown .nav-link {
+    color: #198754;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.location-dropdown .nav-link.active {
+    color: #fff;
+    background-color: #198754;
+    border-radius: 5px;
+}
+
+/* 城市按鈕樣式 */
+.location-dropdown .btn-outline-secondary {
+    color: #198754;
+    border-color: #dee2e6;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.location-dropdown .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* 添加到現有的 CSS 中 */
+.dropdown .dropdown-toggle {
+    position: relative;
+    padding-left: 4.5rem; /* 為標題預留空間 */
+}
+
+.dropdown .dropdown-toggle .fw-bold {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropdown .dropdown-toggle .selected-text {
+    display: inline-block;
+}
+
+/* 添加到現有的 CSS 中 */
+.swap-btn {
+    padding: 0.375rem 0.75rem;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.swap-btn:hover {
+    transform: scale(1.1);
+}
+
+.swap-btn i {
+    font-size: 1.1rem;
+}
