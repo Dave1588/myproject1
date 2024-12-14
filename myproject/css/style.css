@@ -557,3 +557,66 @@ footer a:hover {
     color: #dc3545;  /* 使用紅色顯示警告訊息 */
     font-weight: 500;
 }
+
+/* 房間人數下拉按鈕內的文字布局 */
+#room-people-dropdown .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;  /* 設置文字之間的間距 */
+}
+
+#room-people-dropdown .dropdown-toggle .fw-bold {
+    flex-shrink: 0;  /* 防止文字被壓縮 */
+    min-width: max-content;  /* 確保標題文字不會換行 */
+}
+
+#room-people-dropdown .dropdown-toggle .selected-text {
+    text-align: right;  /* 選擇的文字靠右對齊 */
+    flex-grow: 1;  /* 讓選擇的文字佔據剩餘空間 */
+    margin-right: 20px;  /* 為下拉箭頭預留空間 */
+}
+
+/* 下拉箭頭的位置調整 */
+#room-people-dropdown .dropdown-toggle::after {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 日期之間箭頭的樣式 */
+.bi-arrow-right {
+    font-size: 1.2rem;
+    color: #6c757d;  /* 使用 Bootstrap 的次要顏色 */
+}
+
+/* 主標題樣式 */
+.main-title {
+    font-size: 32px;  /* 設定字體大小為32px */
+    font-weight: bold;  /* 設定粗體 */
+    margin: 20px 0;  /* 上下間距 */
+    color: #333;  /* 文字顏色 */
+}
+
+/* 報名狀態按鈕組樣式 */
+.btn-group .btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* 選中狀態的樣式 */
+.btn-check:checked + .btn-outline-primary {
+    background-color: #0d6efd;
+    color: white;
+}
