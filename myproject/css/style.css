@@ -18,7 +18,69 @@
 }
 
 /* ====================================
-   2. Header 相關樣式
+   2. 來回/單程按鈕統一樣式
+   ==================================== */
+/* 未選中狀態 */
+.btn-check + .btn-outline-primary,
+#tab-hsr .btn-check + .btn-outline-primary {
+    color: #198754;
+    border-color: #198754;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    padding: 6px 12px;
+}
+
+/* 選中狀態 */
+.btn-check:checked + .btn-outline-primary,
+#tab-hsr .btn-check:checked + .btn-outline-primary {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+    box-shadow: 0 2px 4px rgba(25, 135, 84, 0.2);
+}
+
+/* 懸停狀態 */
+.btn-check + .btn-outline-primary:hover,
+#tab-hsr .btn-check + .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+    box-shadow: 0 2px 6px rgba(25, 135, 84, 0.3);
+}
+
+/* 按鈕組樣式 */
+.btn-group {
+    display: inline-flex;
+    gap: 5px;
+}
+
+/* 確保按鈕在按下時的樣式正確 */
+.btn-check:active + .btn-outline-primary,
+.btn-check:focus + .btn-outline-primary {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+    box-shadow: 0 2px 4px rgba(25, 135, 84, 0.2);
+}
+
+/* Bootstrap 按鈕變數覆蓋 */
+.btn-outline-primary {
+    --bs-btn-color: #198754;
+    --bs-btn-border-color: #198754;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #198754;
+    --bs-btn-hover-border-color: #198754;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #198754;
+    --bs-btn-active-border-color: #198754;
+}
+
+/* ====================================
+   3. Header 相關樣式
    ==================================== */
 .header {
     width: 100%;
@@ -46,7 +108,7 @@
 }
 
 /* ====================================
-   3. 搜尋框樣式
+   4. 搜尋框樣式
    ==================================== */
 .search-box {
     max-width: 1100px;
@@ -58,8 +120,9 @@
 }
 
 /* ====================================
-   4. 卡片輪播區域
+   5. 卡片輪播區域
    ==================================== */
+/* 輪播容器 */
 #cardcarousel .carousel-container {
     position: relative;
     width: 80%;
@@ -113,11 +176,11 @@
 }
 
 /* ====================================
-   5. Footer 樣式
+   6. Footer 樣式
    ==================================== */
 /* 基本設定 */
 footer {
-    background-color: #333;
+    background-color: #444;
     color: #ffffff;
 }
 
@@ -128,7 +191,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #ffffff;
+    color: #11d073;
     text-decoration: underline;
 }
 
@@ -148,7 +211,7 @@ footer a:hover {
 }
 
 .footer .nav-link:hover {
-    color: #4fc3f7;
+    color: #11d073;
     text-decoration: none;
 }
 
@@ -164,7 +227,7 @@ footer a:hover {
 }
 
 .footer .footer-services ul a:hover {
-    color: #4fc3f7;
+    color: #11d073;
     text-decoration: none;
 }
 
@@ -175,7 +238,7 @@ footer a:hover {
 }
 
 .footer .privacy-policy:hover {
-    color: #4fc3f7;
+    color: #11d073;
 }
 
 /* Footer 分隔線 */
@@ -188,7 +251,7 @@ footer a:hover {
 }
 
 /* ====================================
-   6. 社群媒體圖標區域
+   7. 社群媒體圖標區域
    ==================================== */
 .social-links {
     display: flex;
@@ -203,9 +266,8 @@ footer a:hover {
 }
 
 .social-icon:hover {
-    color: #ffffff;
+    color: #11d073;
     transform: scale(1.3);
-    color: #4fc3f7;
 }
 
 /* 社群媒體RWD設定 */
@@ -223,7 +285,7 @@ footer a:hover {
 }
 
 /* ====================================
-   7. QR碼樣式
+   8. QR碼樣式
    ==================================== */
 .rounded-qr {
     width: 150px;
@@ -240,7 +302,7 @@ footer a:hover {
 }
 
 /* ====================================
-   8. 圖片區塊樣式
+   9. 圖片區塊樣式
    ==================================== */
 .image-section {
     max-width: 1100px;
@@ -303,7 +365,7 @@ footer a:hover {
 }
 
 /* ====================================
-   9. RWD 響應式設計
+   10. RWD 響應式設計
    ==================================== */
 @media (max-width: 768px) {
     .image-wrapper {
@@ -317,68 +379,57 @@ footer a:hover {
     }
 }
 
-/* App下載連結的樣式 */
+/* ====================================
+   11. App下載連結樣式
+   ==================================== */
 .app-download-link {
-    /* 基本樣式 */
     text-decoration: none;
-    color: #ffffff;  /* 可以根據需要調整顏色 */
-    transition: transform 0.3s ease;  /* 添加平滑過渡效果 */
-    display: inline-block;  /* 確保transform能夠正常工作 */
+    color: #ffffff;
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .app-download-link:hover {
-    transform: translateX(5px);  /* hover時向右移動5px */
-    text-decoration: none;  /* 移除hover時的底線 */
-    color: #4fc3f7;
+    color: #11d073;
+    transform: translateX(5px);
+    text-decoration: none;
 }
 
-/* QR Code 的基本樣式 */
+/* QR Code 基本樣式 */
 .app-qr-code img {
-    width: 100%; /* 或設定具體尺寸，例如 200px */
+    width: 100%;
     height: auto;
     display: block;
 }
 
-/* 在螢幕寬度小於 576px 時的樣式 */
+/* RWD 調整 */
 @media (max-width: 575.98px) {
     .app-qr-code img {
-        width: 50%; /* 縮小到原始大小的 50% */
+        width: 50%;
     }
 }
 
+/* ====================================
+   12. 表單元素樣式
+   ==================================== */
 /* 自定義按鈕組樣式 */
-.btn-group .btn-outline-primary {
-    border-color: #198754;
-    color: #198754;
+.btn-group .btn {
+    flex: 1;
+    white-space: nowrap;
 }
 
-.btn-group .btn-outline-primary:hover,
-.btn-group .btn-check:checked + .btn-outline-primary {
-    background-color: #198754;
-    border-color: #198754;
-    color: white;
-}
-
-/* 表單間距調整 */
+/* 表單控件高度統一 */
 .form-control, .form-select {
     height: 38px;
 }
 
-/* 按鈕組寬度設定 */
-.btn-group {
-    display: flex;
-}
-
-.btn-group .btn {
-    flex: 1;  /* 讓每個按鈕平均分配寬度 */
-    white-space: nowrap;  /* 防止文字換行 */
-}
-
-/* 下拉選單樣式 */
+/* ====================================
+   13. 下拉選單樣式
+   ==================================== */
 .location-dropdown {
-    width: 320px;  /* 設定下拉選單寬度 */
-    max-height: 400px;  /* 設定最大高度 */
-    overflow-y: auto;  /* 允許垂直滾動 */
+    width: 320px;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 /* 分類標籤樣式 */
@@ -412,10 +463,12 @@ footer a:hover {
     border-color: #198754;
 }
 
-/* 添加到現有的 CSS 中 */
+/* ====================================
+   14. 下拉按鈕樣式
+   ==================================== */
 .dropdown .dropdown-toggle {
     position: relative;
-    padding-left: 4.5rem; /* 為標題預留空間 */
+    padding-left: 4.5rem;
 }
 
 .dropdown .dropdown-toggle .fw-bold {
@@ -429,7 +482,9 @@ footer a:hover {
     display: inline-block;
 }
 
-/* 添加到現有的 CSS 中 */
+/* ====================================
+   15. 交換按鈕樣式
+   ==================================== */
 .swap-btn {
     padding: 0.375rem 0.75rem;
     border-radius: 50%;
@@ -449,30 +504,90 @@ footer a:hover {
     font-size: 1.1rem;
 }
 
-/* 日期輸入框樣式 */
+/* ====================================
+   16. 日期輸入組樣式
+   ==================================== */
+/* 日期輸入組基本共用樣式 */
+.date-input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
 .date-input-group input[type="date"] {
-    cursor: pointer;
-    padding-right: 10px;
+    flex: 1;
+    min-width: 120px;
+    border-left: none;
+    padding: 0.375rem 0.75rem;
 }
 
-.date-input-group input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    padding: 5px;
-    margin-right: -8px;
-    opacity: 0.6;
+.date-input-group input[type="date"]:focus {
+    border-left: none;
+    box-shadow: none;
 }
 
-.date-input-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    opacity: 1;
+/* 箭頭圖示基本樣式 */
+.col-auto .bi-arrow-right {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
 }
 
-/* 禁用狀態樣式 */
-.date-input-group input[type="date"]:disabled {
-    background-color: #e9ecef;
-    cursor: not-allowed;
+/* 機票分類日期樣式 */
+#tab-flights .date-input-group .input-group-text {
+    min-width: 100px;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-right: none;
+    font-size: 0.9rem;
+    padding: 0.375rem 0.5rem;
 }
 
-/* 錯誤狀態樣式 */
+/* 訂房分類日期樣式 */
+#tab-hotels .date-input-group .input-group-text {
+    min-width: 100px;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-right: none;
+    font-size: 0.9rem;
+    padding: 0.375rem 0.5rem;
+}
+
+/* 團體分類日期樣式 */
+#tab-group .date-input-group .input-group-text {
+    min-width: 140px;  /* 較長文字需要更寬的空間 */
+    white-space: nowrap;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-right: none;
+    font-size: 0.9rem;
+    padding: 0.375rem 0.5rem;
+}
+
+/* 高鐵分類日期樣式 */
+#tab-hsr .date-input-group .input-group-text {
+    min-width: 100px;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-right: none;
+    font-size: 0.9rem;
+    padding: 0.375rem 0.5rem;
+}
+
+/* 票券當地遊分類日期樣式 */
+#tab-local .date-input-group .input-group-text {
+    min-width: 100px;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-right: none;
+    font-size: 0.9rem;
+    padding: 0.375rem 0.5rem;
+}
+
+/* 日期輸入錯誤狀態樣式 */
 .date-input-group.is-invalid input[type="date"] {
     border-color: #dc3545;
 }
@@ -482,7 +597,9 @@ footer a:hover {
     color: #dc3545;
 }
 
-/* 人數選擇下拉選單樣式 */
+/* ====================================
+   17. 人數選擇下拉選單樣式
+   ==================================== */
 .passenger-select-btn {
     white-space: normal;
     min-height: 38px;
@@ -490,13 +607,13 @@ footer a:hover {
 }
 
 .passenger-dropdown {
-    width: 380px !important;  /* 增加下拉選單寬度 */
+    width: 380px !important;
     max-width: none !important;
-    padding: 1rem !important;  /* 增加內部間距 */
+    padding: 1rem !important;
 }
 
 .passenger-type {
-    padding: 12px 0;  /* 增加每個選項的上下間距 */
+    padding: 12px 0;
     border-bottom: 1px solid #dee2e6;
 }
 
@@ -504,24 +621,24 @@ footer a:hover {
     border-bottom: none;
 }
 
-/* 調整數字調整器的間距 */
+/* 數字調整器樣式 */
 .number-spinner {
-    min-width: 120px;  /* 確保數字調整器有足夠空間 */
+    min-width: 120px;
     text-align: right;
 }
 
 .number-spinner button {
-    width: 32px;  /* 稍微加大按鈕 */
+    width: 32px;
     height: 32px;
     padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 4px;  /* 增加按鈕之間的間距 */
+    margin: 0 4px;
 }
 
 .number-spinner span {
-    min-width: 24px;  /* 確保數字有固定寬度 */
+    min-width: 24px;
     text-align: center;
     display: inline-block;
 }
@@ -531,20 +648,17 @@ footer a:hover {
     cursor: not-allowed;
 }
 
-/* 確保下拉選單不會被截斷 */
+/* ====================================
+   18. 其他通用樣式
+   ==================================== */
+/* 下拉選單顯示修正 */
 .dropdown-menu.show {
     transform: none !important;
 }
 
-/* 調整文字區域的寬度 */
-.passenger-type .d-flex > div:first-child {
-    flex: 1;  /* 讓文字區域佔據剩餘空間 */
-    margin-right: 1rem;  /* 增加與按鈕的間距 */
-}
-
-/* Toast 樣式 */
+/* Toast 提示框樣式 */
 .toast-container {
-    z-index: 1500;  /* 確保顯示在下拉選單上方 */
+    z-index: 1500;
 }
 
 .toast {
@@ -554,26 +668,37 @@ footer a:hover {
 }
 
 .toast-body {
-    color: #dc3545;  /* 使用紅色顯示警告訊息 */
+    color: #dc3545;
     font-weight: 500;
 }
 
+/* 主標題樣式 */
+.main-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* ====================================
+   17. 人數選擇下拉選單樣式
+   ==================================== */
 /* 房間人數下拉按鈕內的文字布局 */
 #room-people-dropdown .dropdown-toggle {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;  /* 設置文字之間的間距 */
+    gap: 10px;
 }
 
 #room-people-dropdown .dropdown-toggle .fw-bold {
-    flex-shrink: 0;  /* 防止文字被壓縮 */
-    min-width: max-content;  /* 確保標題文字不會換行 */
+    flex-shrink: 0;
+    min-width: max-content;
 }
 
 #room-people-dropdown .dropdown-toggle .selected-text {
-    text-align: right;  /* 選擇的文字靠右對齊 */
-    flex-grow: 1;  /* 讓選擇的文字佔據剩餘空間 */
+    text-align: right;
+    flex-grow: 1;
     margin-right: 20px;  /* 為下拉箭頭預留空間 */
 }
 
@@ -585,38 +710,45 @@ footer a:hover {
     transform: translateY(-50%);
 }
 
-/* 日期之間箭頭的樣式 */
-.bi-arrow-right {
-    font-size: 1.2rem;
-    color: #6c757d;  /* 使用 Bootstrap 的次要顏色 */
+/* 修改導航標籤的顏色 */
+.nav-tabs .nav-link {
+    color: #198754;  /* Bootstrap 的綠色 */
+    border-color: #dee2e6;
 }
 
-/* 主標題樣式 */
-.main-title {
-    font-size: 32px;  /* 設定字體大小為32px */
-    font-weight: bold;  /* 設定粗體 */
-    margin: 20px 0;  /* 上下間距 */
-    color: #333;  /* 文字顏色 */
+.nav-tabs .nav-link:hover {
+    border-color: #198754;
 }
 
-/* 報名狀態按鈕組樣式 */
-.btn-group .btn {
-    padding: 0.5rem 1.5rem;
-    border-radius: 0;
+.nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
 }
 
-.btn-group .btn:first-child {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+/* 修改按鈕組的顏色 */
+.btn-outline-primary {
+    color: #198754;
+    border-color: #198754;
 }
 
-.btn-group .btn:last-child {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
 }
 
-/* 選中狀態的樣式 */
+/* 修改按鈕組的選中狀態 */
 .btn-check:checked + .btn-outline-primary {
-    background-color: #0d6efd;
-    color: white;
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* 修改按鈕組的焦點狀態 */
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }

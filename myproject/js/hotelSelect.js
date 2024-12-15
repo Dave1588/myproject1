@@ -153,4 +153,33 @@ document.addEventListener('DOMContentLoaded', function() {
 function searchHotels() {
     // 這裡添加搜尋邏輯
     console.log('搜尋住宿:', hotelCounts);
+}
+
+// 初始化訂房人數選擇器
+function initializeHotelPeopleCount() {
+    // 重置成人數量
+    document.getElementById('adult-count').textContent = '2';
+    document.getElementById('adult-minus').classList.remove('disabled');
+    document.getElementById('adult-plus').classList.remove('disabled');
+    
+    // 重置小孩數量
+    document.getElementById('child-count').textContent = '0';
+    document.getElementById('child-minus').classList.add('disabled');
+    document.getElementById('child-plus').classList.remove('disabled');
+    
+    // 重置顯示文字
+    updateHotelPeopleDisplay();
+}
+
+// 頁面載入時初始化
+document.addEventListener('DOMContentLoaded', function() {
+    initializeHotelPeopleCount();
+});
+
+// 更新人數顯示文字
+function updateHotelPeopleDisplay() {
+    const adultCount = parseInt(document.getElementById('adult-count').textContent);
+    const childCount = parseInt(document.getElementById('child-count').textContent);
+    const displayText = `${adultCount + childCount}人 (成人${adultCount}人${childCount > 0 ? `、小孩${childCount}人` : ''})`;
+    document.querySelector('#hotel-people-dropdown .selected-text').textContent = displayText;
 } 

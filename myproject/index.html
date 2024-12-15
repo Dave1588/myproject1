@@ -469,7 +469,7 @@
                       <div class="col-md-3">
                         <div class="dropdown w-100" id="departure-dropdown">
                             <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="fw-bold">出發地</span>
+                                <span class="fw-bold">目的地</span>
                                 <span class="selected-text text-muted">請選擇</span>
                             </button>
                             <div class="dropdown-menu location-dropdown p-3">
@@ -845,43 +845,169 @@
                               </div>
                           </div>
 
-                            <!-- 第三列：出發區間 -->
-                            <div class="row g-3 mb-3">
-                                <!-- 出發區間(開始) -->
-                                <div class="col-md-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text fw-bold">出發區間</span>
-                                        <input type="date" class="form-control" id="group-start-date">
-                                    </div>
-                                </div>
-
-                                <!-- 箭頭圖示 -->
-                                <div class="col-auto d-flex align-items-center">
-                                    <i class="bi bi-arrow-right"></i>
-                                </div>
-
-                                <!-- 出發區間(結束) -->
-                                <div class="col-md-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text fw-bold">結束日期</span>
-                                        <input type="date" class="form-control" id="group-end-date">
-                                    </div>
-                                </div>
+                    <!-- 第三列：日期選擇 -->
+                    <div class="row g-3 mb-3">
+                        <!-- 出發區間-開始 -->
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-text fw-bold">出發區間</span>
+                                <input type="date" class="form-control" id="group-start-date">
                             </div>
-
-                            <!-- 第四列：搜尋按鈕 -->
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-success" style="width: 120px;" onclick="searchGroups()">搜尋</button>
-                                </div>
+                        </div>
+                        
+                        <!-- 箭頭 -->
+                        <div class="col-auto d-flex align-items-center">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                        
+                        <!-- 出發區間-結束 -->
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-text fw-bold">出發區間</span>
+                                <input type="date" class="form-control" id="group-end-date">
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 第四列：搜尋按鈕 -->
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchGroups()">搜尋</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="tab-hsr">
                 <!-- 高鐵旅行的內容 -->
+                <form id="hsr-form">
+                    <!-- 第一列：來回/單程選擇 -->
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <div class="btn-group w-100" role="group" aria-label="Trip type selection">
+                                <input type="radio" class="btn-check" name="hsrTripType" id="hsrRoundTrip" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="hsrRoundTrip">來回</label>
+
+                                <input type="radio" class="btn-check" name="hsrTripType" id="hsrOneWay" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="hsrOneWay">單程</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第二列：出發地和目的地選擇 -->
+                    <div class="row g-3 mb-3">
+                        <!-- 出發地 -->
+                        <div class="col-md-3">
+                            <div class="dropdown w-100" id="hsr-departure-dropdown">
+                                <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="fw-bold">出發站</span>
+                                    <span class="selected-text text-muted">請選擇</span>
+                                </button>
+                                <div class="dropdown-menu p-3">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">南港</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">台北</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">板橋</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">桃園</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">新竹</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">苗栗</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">台中</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">彰化</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">雲林</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">嘉義</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">台南</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">左營</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 交換按鈕 -->
+                        <div class="col-auto d-flex align-items-center">
+                            <button type="button" class="btn btn-outline-secondary swap-btn" onclick="swapHsrStations()">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- 目的地 -->
+                        <div class="col-md-3">
+                            <div class="dropdown w-100" id="hsr-destination-dropdown">
+                                <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="fw-bold">到達站</span>
+                                    <span class="selected-text text-muted">請選擇</span>
+                                </button>
+                                <div class="dropdown-menu p-3">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">南港</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">台北</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">板橋</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">桃園</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">新竹</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">苗栗</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">台中</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">彰化</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">雲林</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">嘉義</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">台南</button>
+                                        <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">左營</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第三列：日期選擇 -->
+                    <div class="row g-3 mb-3">
+                        <!-- 去程日期 -->
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-text fw-bold">去程日期</span>
+                                <input type="date" class="form-control" id="hsr-departure-date">
+                            </div>
+                        </div>
+
+                        <!-- 箭頭圖示 -->
+                        <div class="col-auto d-flex align-items-center">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+
+                        <!-- 回程日期 -->
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-text fw-bold">回程日期</span>
+                                <input type="date" class="form-control" id="hsr-return-date">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 搜尋按鈕 -->
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success" style="width: 120px;" onclick="searchHsr()">搜尋</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="tab-pane fade" id="tab-local">
                 <!-- 票券當地遊的內容 -->
+                <div class="container-fluid p-0">
+                    <!-- 搜尋列 -->
+                    <div class="row g-3 mb-3">
+                        <!-- 關鍵字輸入框 -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text fw-bold">關鍵字</span>
+                                <input type="text" class="form-control" placeholder="請輸入" aria-label="關鍵字搜尋">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 搜尋按鈕 -->
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchLocal()">搜尋</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1445,11 +1571,11 @@
                       <div class="footer-services">
                           <h5 class="footer-title">神遊網服務</h5>
                           <ul class="list-unstyled">
+                              <li><a href="#">全球訂房</a></li>
                               <li><a href="#">國內旅遊</a></li>
                               <li><a href="#">國外旅遊</a></li>
-                              <li><a href="#">鐵道旅行</a></li>
-                              <li><a href="#">票券活動</a></li>
                               <li><a href="#">高鐵國旅</a></li>
+                              <li><a href="#">票券活動</a></li>
                           </ul>
                       </div>
                   </div>
@@ -1491,8 +1617,13 @@
                   
                   <div class="col-3">
                       <div class="footer-contact">
-                          <h5 class="footer-title" style="font-size: 20px; font-weight: bold;">聯絡電話</h5>
-                          <p>2345-6789 (手機加01)</p>
+                          <h5 class="footer-title" style="font-size: 20px; font-weight: bold;">訂購諮詢</h5>
+                          <p>台北：02-3345-678</p>
+                          <p>高雄：07-3345-678</p>
+                          <p>台中：04-3345-678</p>
+                          <p>台南：06-3345-678</p>
+                          <p>其他：0800-3345-678</p>
+                          <p>客服時間：週一至週五 09:00-18:00</p>
                       </div>
                   </div>
               </div>
@@ -1518,5 +1649,6 @@
     <script src="js/passengerSelect.js"></script>
     <script src="js/hotelSelect.js"></script>
     <script src="js/groupSelect.js"></script>
+    <script src="js/hsr.js"></script>
 </body>
 </html>
