@@ -31,41 +31,37 @@
     <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel" 
          data-bs-interval="3000" 
          data-bs-pause="hover" 
-         data-bs-wrap="true" 
-         style="height: 510px;">
-    <!-- 自動播放間隔(毫秒) -->
-    <!-- 滑鼠懸停時暫停 -->
-    <!-- 循環播放 -->
-        <!-- 指示器 -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1" style="width: 15px; height: 15px; "></button>
-            <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="1" class="rounded-circle" aria-label="Slide 2" style="width: 15px; height: 15px; "></button>
-            <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="2" class="rounded-circle" aria-label="Slide 3" style="width: 15px; height: 15px; "></button>
-        </div>
-        
-        <!-- 輪播內容 -->
-        <div class="carousel-inner" id="carousel-banner">
-            <div class="carousel-item active">
-                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600" class="d-block w-100" alt="富士山日出" style="object-fit: cover; height: 510px;">
-            </div>
-            <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600" class="d-block w-100" alt="阿爾卑斯山脈" style="object-fit: cover; height: 510px;">
-            </div>
-            <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600" class="d-block w-100" alt="班夫國家公園" style="object-fit: cover; height: 510px;">
-            </div>
-        </div>
-        
-        <!-- 左右箭頭 -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+         data-bs-wrap="true">
+    <!-- 指示器 -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample1" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+    
+    <!-- 輪播內容 -->
+    <div class="carousel-inner" id="carousel-banner">
+        <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600" class="d-block w-100" alt="富士山日出">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600" class="d-block w-100" alt="阿爾卑斯山脈">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1502472584811-0a2f2feb8968?w=1600" class="d-block w-100" alt="馬爾地夫海灘">
+        </div>
+    </div>
+    
+    <!-- 左右箭頭 -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
     <div class="container" id="searchengine-title">
         <h2>美好旅程，從這裡開始</h2>
     </div>
@@ -968,82 +964,91 @@
                             <!-- 顯示9個卡片 -->
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片1">
+                                <img src="./img/card0/taipei101.jpg" class="card-img-top" alt="台北101">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 1</h5>
-                                  <p class="card-text">這是目的地 1 的介紹文字。</p>
+                                    <h5 class="card-title">台北101景觀台</h5>
+                                    <p class="card-text">俯瞰台北市景，體驗世界最快電梯，觀賞巨大阻尼器。</p>
+                                    <div class="price-tag">NT$ 1,200 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片2">
+                                <img src="https://images.unsplash.com/photo-1671642543979-ecbc42fa532f?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="九份老街">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 2</h5>
-                                  <p class="card-text">這是目的地 2 的介紹文字。</p>
+                                    <h5 class="card-title">九份老街半日遊</h5>
+                                    <p class="card-text">走訪百年老街，品嚐道地美食，欣賞山海美景。</p>
+                                    <div class="price-tag">NT$ 800 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片3">
+                                <img src="https://images.unsplash.com/photo-1600003618858-31f6e8089e76?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="太魯閣">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 3</h5>
-                                  <p class="card-text">這是目的地 3 的介紹文字。</p>
+                                    <h5 class="card-title">太魯閣峽谷探索</h5>
+                                    <p class="card-text">探訪壯麗峽谷，漫步燕子口步道，欣賞大理石峭壁。</p>
+                                    <div class="price-tag">NT$ 2,500 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片4">
+                                <img src="https://images.unsplash.com/photo-1722824634219-679c9fe9aa6d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="日月潭">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 4</h5>
-                                  <p class="card-text">這是目的地 4 的介紹文字。</p>
+                                    <h5 class="card-title">日月潭遊湖之旅</h5>
+                                    <p class="card-text">搭乘遊艇環湖，參訪文武廟，品嚐著名紅茶。</p>
+                                    <div class="price-tag">NT$ 1,800 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片5">
+                                <img src="https://images.unsplash.com/photo-1712825412754-7c4a2c31df68?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="阿里山日出">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 5</h5>
-                                  <p class="card-text">這是目的地 5 的介紹文字。</p>
+                                    <h5 class="card-title">阿里山日出團</h5>
+                                    <p class="card-text">搭乘森林小火車，觀賞雲海日出，漫步神木區步道。</p>
+                                    <div class="price-tag">NT$ 2,800 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片6">
+                                <img src="https://images.unsplash.com/photo-1588495077242-2e2f45cb0535?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="墾丁海灘">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 6</h5>
-                                  <p class="card-text">這是目的地 6 的介紹文字。</p>
+                                    <h5 class="card-title">墾丁陽光沙灘遊</h5>
+                                    <p class="card-text">體驗水上活動，暢遊白沙灘，欣賞南國風情。</p>
+                                    <div class="price-tag">NT$ 1,500 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片7">
+                                <img src="./img/card0/farm.jpg" class="card-img-top" alt="清境農場">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 7</h5>
-                                  <p class="card-text">這是目的地 7 的介紹文字。</p>
+                                    <h5 class="card-title">清境農場一日遊</h5>
+                                    <p class="card-text">青青草原漫步，觀賞綿羊秀，享受高山清新空氣。</p>
+                                    <div class="price-tag">NT$ 1,600 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片8">
+                                <img src="https://images.unsplash.com/photo-1632596604937-7f2e27f18bda?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="野柳女王頭">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 8</h5>
-                                  <p class="card-text">這是目的地 8 的介紹文字。</p>
+                                    <h5 class="card-title">野柳地質探索</h5>
+                                    <p class="card-text">探訪女王頭，觀察特殊地質景觀，了解海蝕地形。</p>
+                                    <div class="price-tag">NT$ 900 起</div>
                                 </div>
                               </div>
                             </div>
                             <div class="carousel-card">
                               <div class="card" style="width: 18rem;">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="圖片9">
+                                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500" class="card-img-top" alt="礁溪溫泉">
                                 <div class="card-body">
-                                  <h5 class="card-title">目的地 9</h5>
-                                  <p class="card-text">這是目的地 9 的介紹文字。</p>
+                                    <h5 class="card-title">礁溪溫泉之旅</h5>
+                                    <p class="card-text">泡湯放鬆，品嚐溫泉美食，享受悠閒時光。</p>
+                                    <div class="price-tag">NT$ 2,200 起</div>
                                 </div>
                               </div>
                             </div>

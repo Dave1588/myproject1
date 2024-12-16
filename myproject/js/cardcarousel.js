@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const carousel = container.querySelector('.carousel');
         const leftBtn = container.querySelector('.carousel-btn-left');
         const rightBtn = container.querySelector('.carousel-btn-right');
-        const cardWidth = 306; // 286px + 20px gap
+        const cardWidth = 321; // 286px + 20px gap
         const visibleCards = 3; // 一次顯示的卡片數量
         const cardsToScroll = 3; // 一次滾動的卡片數量
 
