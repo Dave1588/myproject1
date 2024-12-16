@@ -1348,35 +1348,45 @@ html {
 }
 
 #searchengine-title h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin: 0;
-    padding: 0 20px;  /* 與搜尋框內部 padding 一致 */
+    color: #333333;
+    font-size: 2.2em;
+    font-weight: bold;
     position: relative;
     display: inline-block;
+    margin: 0;
+    padding-bottom: 15px;
 }
 
 /* 標題裝飾效果 */
 #searchengine-title h2::after {
     content: '';
     position: absolute;
-    bottom: -8px;
-    left: 20px;  /* 與 padding-left 一致 */
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, #198754, #11d073);
-    border-radius: 2px;
+    bottom: 0;
+    left: 0;  /* 改為從左邊開始 */
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #333333, transparent);  /* 從深到淺 */
+    transform: none;  /* 移除 transform */
 }
 
-/* 標題文字漸層效果 */
-#searchengine-title h2 {
+#searchengine-title h2:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+#searchengine-title h2:hover::after {
+    width: 100%;
+    transition: width 0.3s ease;
+}
+
+/* 標題裝飾效果 */
+/* #searchengine-title h2 {
     background: linear-gradient(45deg, #198754, #11d073);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* 在小螢幕上調整標題大小 */
 @media (max-width: 768px) {
@@ -1411,4 +1421,184 @@ html {
     color: rgba(255, 255, 255, 1);
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* 日本團遊區塊樣式 */
+.section-title {
+    text-align: center;
+    margin: 40px 0;
+    color: #333333;
+    font-weight: bold;
+}
+
+.section-title i {
+    font-size: 0.8em;
+    margin-left: 10px;
+    background: linear-gradient(45deg, #FFB7C5, #FFE4E1);  /* 櫻花粉色漸層 */
+    -webkit-background-clip: text;  /* Safari/Chrome */
+    background-clip: text;          /* 標準語法 */
+    -webkit-text-fill-color: transparent;  /* Safari/Chrome */
+    color: transparent;             /* 標準語法的替代方案 */
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* 發光動畫效果 */
+@keyframes glow {
+    0% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+.japan-tours {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列自動換行 */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.tour-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+}
+
+.tour-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tour-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.duration {
+    font-size: 0.9em;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #ffd700;
+    align-self: flex-end;
+}
+
+.price-suffix {
+    color: #ffffff;
+    font-size: 0.65em;
+    margin-left: 2px;
+    position: relative;
+    top: -2px;
+}
+
+/* 懸停效果 */
+.tour-card:hover .card-info {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.5));
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .japan-tours {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .japan-tours {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .japan-tours {
+        grid-template-columns: 1fr;
+    }
+}
+
+#card-session-title {
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.airplane-icon {
+    font-size: 0.8em;
+    margin-left: 10px;
+    color: #0d6efd;  /* Bootstrap 主題藍色 */
+    display: inline-block;
+    animation: flying 3s ease-in-out infinite;
+}
+
+@keyframes flying {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(5px) translateY(-5px) rotate(10deg);
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+}
+
+#myTab {
+    gap: 20px;  /* 添加間距 */
+    border-bottom: none;  /* 移除底部邊框 */
+}
+
+#myTab .nav-link {
+    border-radius: 5px;  /* 圓角 */
+    padding: 8px 16px;   /* 內邊距 */
+    margin: 0;           /* 清除預設邊距 */
+}
+
+/* 激活狀態 */
+#myTab .nav-link.active {
+    background-color: #198754;  /* Bootstrap 主題綠色 */
+    color: white;
+    border: none;
+}
+
+/* 未激活狀態 */
+#myTab .nav-link:not(.active) {
+    background-color: #f8f9fa;
+    border: 1px solid #198754;  /* 使用主題綠色邊框 */
+    color: #198754;  /* 文字也使用主題綠色 */
+}
+
+/* 懸停效果 */
+#myTab .nav-link:not(.active):hover {
+    background-color: rgba(25, 135, 84, 0.1);  /* 淺綠色背景 */
+    border-color: #198754;
 }
