@@ -31,41 +31,33 @@ function swapHsrStations() {
 
 // 監聽高鐵分類的單程/來回選擇的變化
 document.addEventListener('DOMContentLoaded', function() {
-    // 使用更具體的選擇器，只針對高鐵分類的按鈕
-    const hsrTripTypeInputs = document.querySelectorAll('#tab-hsr input[name="hsrTripType"]');
-    const returnDateGroup = document.querySelector('#hsr-return-date').closest('.col-md-3');
-    const returnArrow = returnDateGroup.previousElementSibling;
-
-    // 確保高鐵分類按鈕組的狀態正確顯示
-    function updateHsrTripTypeButtons() {
-        hsrTripTypeInputs.forEach(input => {
-            const label = document.querySelector(`label[for="${input.id}"]`);
-            if (input.checked) {
-                label.classList.add('active');
-            } else {
-                label.classList.remove('active');
-            }
-        });
+    // 獲取高鐵的單程和來回選擇的radio按鈕
+    const hsrOneWayRadio = document.getElementById('hsrOneWay');
+    const hsrRoundTripRadio = document.getElementById('hsrRoundTrip');
+    
+    // 獲取需要控制顯示/隱藏的元素
+    const hsrReturnDate = document.getElementById('hsr-return-date').closest('.col-md-3');
+    const hsrDateArrow = document.querySelector('.hsr-date-arrow'); // 添加箭頭的選擇器
+    
+    // 處理單程/來回切換
+    function handleHsrTypeChange() {
+        if (hsrOneWayRadio.checked) {
+            // 單程：隱藏回程日期和箭頭
+            hsrReturnDate.style.display = 'none';
+            hsrDateArrow.style.display = 'none';
+        } else {
+            // 來回：顯示回程日期和箭頭
+            hsrReturnDate.style.display = '';
+            hsrDateArrow.style.display = '';
+        }
     }
-
-    // 初始化時更新高鐵按鈕狀態
-    updateHsrTripTypeButtons();
-
-    hsrTripTypeInputs.forEach(input => {
-        input.addEventListener('change', function() {
-            // 更新高鐵按鈕狀態
-            updateHsrTripTypeButtons();
-            
-            // 處理回程日期的顯示/隱藏
-            if (this.id === 'hsrOneWay') {
-                returnDateGroup.style.display = 'none';
-                returnArrow.style.display = 'none';
-            } else {
-                returnDateGroup.style.display = '';
-                returnArrow.style.display = '';
-            }
-        });
-    });
+    
+    // 添加事件監聽器
+    hsrOneWayRadio.addEventListener('change', handleHsrTypeChange);
+    hsrRoundTripRadio.addEventListener('change', handleHsrTypeChange);
+    
+    // 初始化時執行一次
+    handleHsrTypeChange();
 });
 
 // 搜尋功能

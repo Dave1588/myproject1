@@ -24,93 +24,9 @@
         </div>
     </div>
     <!-- header區塊: 用於定義頁面的頂部區域 -->
-     <div header>
-        <div class="headerbox">
-            <!-- container容器: Bootstrap的容器類,用於控制內容寬度和對齊
-                pt-15: padding-top 15px的內邊距
-                pb-15: padding-bottom 15px的內邊距-->
-            <div class="container pt-20 pb-20 mt-2" style="height: 40px;">
-                <div class="d-flex flex-wrap justify-content-between align-items-center flex-nowrap">
-                    <!-- Logo 區域 -->
-                    <div class="col-3 col-md-2">
-                        <a href="/index.html">
-                            <img class="logo" src="./img/logoheader.PNG" alt height="40">
-                        </a>
-                    </div>
-                    
-                    <!-- 右側功能區 -->
-                    <div class="header-social-icon mb-10 col-4 col-sm-8 justify-content-end d-flex flex-nowrap">
-                        <!-- 客服中心 -->
-                        <a href="#" style="color: black;display:inline-block; text-decoration: none; white-space: nowrap;" class="mb-0">客服中心</a>
-                        
-                        <div class="dropdown d-inline-block me-2">
-                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; background: none; border: none; padding: 4px 12px;">
-                                訂單管理
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">會員訂單</a></li>
-                                <li><a class="dropdown-item" href="#">訪客訂單</a></li>
-                            </ul>
-                        </div>
-                        <a href="#" style="background:#198754; color:white; display: inline-block; padding: 4px 12px; border-radius: 20px; text-decoration: none;" class="order-3 mt-1 mb-1 app-lg">
-                            <span class="text-nowrap">	
-                                <i class="fas fa-user me-2"></i>
-                                <span class="text-nowrap">登入</span>
-                            </span>
-                        </a>
-                        <a href="#" style="color:#198754; display: inline-block; text-decoration: none;" class="order-3 mt-1 mb-1 app-lg">
-                            <span class="text-nowrap">	
-                                <i class="fas fa-user-plus fa-lg me-10 d-none" style="font-weight: medium;"></i> 
-                                <span class="text-nowrap">註冊</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 新增的橫向區塊 -->
-        <div class="horizontal-block">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center py-2">
-                    <!-- 左側漢堡按鈕 -->
-                    <div class="col-1">
-                        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
-                            <i class="fas fa-bars me-2"></i>
-                            <span class="d-none d-md-inline" style="white-space: nowrap;">總覽</span>
-                        </button>
-                    </div>
-                    
-                    <!-- 右側六個等寬區域 -->
-                    <div class="col-11">
-                        <div class="row">
-                            <div class="col-2 text-center">找機票</div>
-                            <div class="col-2 text-center">找住宿</div>
-                            <div class="col-2 text-center">找團體</div>
-                            <div class="col-2 text-center">找高鐵</div>
-                            <div class="col-2 text-center">找票券</div>
-                            <div class="col-2 text-center">APP下載</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   
-        <!-- 側邊欄 -->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="sidebarMenuLabel">選單</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">選項 1</a>
-                    <a href="#" class="list-group-item list-group-item-action">選項 2</a>
-                    <a href="#" class="list-group-item list-group-item-action">選項 3</a>
-                </div>
-            </div>
-        </div>
-    </div>  
+     <!-- Header 組件容器 -->
+    <div id="header-component"></div>
+    <!-- banner圖片輪播圖 -->
     <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel" 
          data-bs-interval="3000" 
          data-bs-pause="hover" 
@@ -384,12 +300,12 @@
                         </div>
 
                         <!-- 箭頭圖示 -->
-                        <div class="col-auto d-flex align-items-center">
+                        <div class="col-auto align-items-center" id="date-arrow">  <!-- 移除 d-flex -->
                             <i class="bi bi-arrow-right"></i>
                         </div>
 
                         <!-- 回程日期 -->
-                        <div class="col-md-3">
+                        <div class="col-md-3" id="return-date-container">
                             <div class="input-group">
                                 <span class="input-group-text fw-bold">回程日期</span>
                                 <input type="date" class="form-control" id="return-date">
@@ -957,7 +873,7 @@
 
                     <!-- 第三列：日期選擇 -->
                     <div class="row g-3 mb-3">
-                        <!-- 去程日期 -->
+                        <!-- 高鐵日期選擇區域 -->
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-text fw-bold">去程日期</span>
@@ -965,12 +881,12 @@
                             </div>
                         </div>
 
-                        <!-- 箭頭圖示 -->
-                        <div class="col-auto d-flex align-items-center">
+                        <!-- 高鐵箭頭 -->
+                        <div class="col-auto align-items-center hsr-date-arrow">  <!-- 添加 hsr-date-arrow 類名 -->
                             <i class="bi bi-arrow-right"></i>
                         </div>
 
-                        <!-- 回程日期 -->
+                        <!-- 高鐵回程日期 -->
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-text fw-bold">回程日期</span>
@@ -1018,26 +934,26 @@
             <p>這裡是主要內容域，您可以在這裡放置更多訊息。</p>
             <div class="container mt-5" id="cardcarousel">
                 <!-- 新增的導航標籤 -->
-                 <div class="d-flex justify-content-start align-items-center">
-                            <h2 class="me-5">旅遊目的地卡片展示</h2>
-                            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">台灣</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">日本</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">韓國</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">大陸港澳</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="tab5-tab" data-bs-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">歐洲</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="d-flex flex-column flex-md-row justify-content-start align-items-md-center">
+                    <h2 class="me-md-5 mb-3 mb-md-0">旅遊目的地卡片展示</h2>
+                    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">台灣</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">日本</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">韓國</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">大陸港澳</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab5-tab" data-bs-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">歐洲</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                         <div class="carousel-container">
@@ -1550,98 +1466,13 @@
         </div>
     </main>
 
-<!-- 這裡開始是footer -->
-    <footer class="footer text-center text-lg-start">
-        <div class="container p-4">
-            <!-- Footer Navigation -->
-            <div class="footer-nav mb-4">
-                <ul class="nav justify-content-center w-100">
-                    <li class="nav-item flex-grow-1 text-center"><a href="#" class="nav-link">關於神遊網</a></li>
-                    <li class="nav-item flex-grow-1 text-center"><a href="#" class="nav-link">會員權益</a></li>
-                    <li class="nav-item flex-grow-1 text-center"><a href="#" class="nav-link">客服中心</a></li>
-                    <li class="nav-item flex-grow-1 text-center"><a href="#" class="nav-link">服務據點</a></li>
-                    <li class="nav-item flex-grow-1 text-center"><a href="#" class="nav-link">菁英招募</a></li>
-                </ul>
-            </div>
-            <hr class="footer-divider">
-            <!-- Footer Main Content -->
-            <div class="footer-main mb-4">
-              <div class="row">
-                  <div class="col-3">
-                      <div class="footer-services">
-                          <h5 class="footer-title">神遊網服務</h5>
-                          <ul class="list-unstyled">
-                              <li><a href="#">全球訂房</a></li>
-                              <li><a href="#">國內旅遊</a></li>
-                              <li><a href="#">國外旅遊</a></li>
-                              <li><a href="#">高鐵國旅</a></li>
-                              <li><a href="#">票券活動</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  
-                  <div class="col-3">
-                      <div class="footer-app-info">
-                          <h5 class="footer-title">神遊網APP</h5>
-                          <div class="app-download-links">
-                              <a href="#" class="d-flex align-items-center mb-2 app-download-link">
-                                  <i class="fab fa-apple me-2"></i>
-                                  iOS下載
-                              </a>
-                              <a href="#" class="d-flex align-items-center app-download-link">
-                                  <i class="fab fa-android me-2"></i>
-                                  Android下載
-                              </a>
-                          </div>
-                      </div>
-                      
-                      <div class="footer-social mt-4">
-                          <h5 class="footer-title">Follow us on</h5>
-                          <div class="social-links">
-                              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                              <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <div class="col-3">
-                      <div class="footer-app-download">
-                          <h5 class="footer-title" style="font-size: 20px; font-weight: bold;">APP立即下載</h5>
-                          <div class="app-qr-code rounded-qr">
-                              <img src="./img/qrcode_chrome.png" alt="QR Code">
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <div class="col-3">
-                      <div class="footer-contact">
-                          <h5 class="footer-title" style="font-size: 20px; font-weight: bold;">訂購諮詢</h5>
-                          <p>台北：02-3345-678</p>
-                          <p>高雄：07-3345-678</p>
-                          <p>台中：04-3345-678</p>
-                          <p>台南：06-3345-678</p>
-                          <p>其他：0800-3345-678</p>
-                          <p>客服時間：週一至週五 09:00-18:00</p>
-                      </div>
-                  </div>
-              </div>
-            </div>
+    <!-- Footer 組件容器 -->
+    <div id="footer-component"></div>
 
-            <!-- Footer Info -->
-            <div class="footer-info">
-                <div class="d-flex justify-content-between align-items-center">
-                    <span class="copyright">Copyright © 2024 GodTravel Co., Ltd. All rights reserved.</span>
-                    <a href="./privacy.html" class="privacy-policy">隱私權保護政策及個資聲明</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
     <!-- 自定義 JS -->
-    <script src="js/dropdown.js"></script>
     <script src="js/cardcarousel.js"></script>
     <script src="js/switchCategory.js"></script>
     <script src="js/locationSelect.js"></script>
@@ -1650,5 +1481,15 @@
     <script src="js/hotelSelect.js"></script>
     <script src="js/groupSelect.js"></script>
     <script src="js/hsr.js"></script>
+    
+    <!-- 返回頁首按鈕 -->
+    <button id="back-to-top" class="back-to-top-btn" title="返回頁首">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/backToTop.js"></script>
+    <script src="./js/dropdownManager.js"></script>
+    <script src="js/flightTypeManager.js"></script>
+    <!-- 組件加載器 -->
+    <script src="./js/loadComponents.js"></script>
 </body>
 </html>

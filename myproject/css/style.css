@@ -710,13 +710,14 @@ footer a:hover {
     transform: translateY(-50%);
 }
 
-/* 修改導航標籤的顏色 */
+/* 修改導航標籤的顏色和hover效果 */
 .nav-tabs .nav-link {
     color: #198754;  /* Bootstrap 的綠色 */
     border-color: #dee2e6;
 }
 
 .nav-tabs .nav-link:hover {
+    background-color: #f8f9fa;  /* Bootstrap 的淺灰色 */
     border-color: #198754;
 }
 
@@ -726,29 +727,468 @@ footer a:hover {
     border-color: #198754;
 }
 
-/* 修改按鈕組的顏色 */
-.btn-outline-primary {
+/* 修改連結的hover效果 */
+.hover-green:hover {
+    color: #198754 !important; /* Bootstrap 的 success 綠色 */
+    background-color: #f8f9fa; /* Bootstrap 的淺灰色背景 */
+}
+
+/* ====================================
+   19. 返回頁首按鈕樣式
+   ==================================== */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #198754;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;  /* 初始隱藏 */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top-btn:hover {
+    background-color: #11d073;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top-btn i {
+    font-size: 20px;
+}
+
+/* 顯示按鈕的類別 */
+.back-to-top-btn.show {
+    display: flex;
+}
+
+/* 搜尋引擎下拉選單樣式 */
+.search-engine-dropdown .dropdown-toggle {
+    position: relative;
+    padding-left: 4.5rem;
+}
+
+.search-engine-dropdown .selected-search-text {
+    display: inline-block;
+    width: calc(100% - 20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search-options .search-engine-option:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* 側邊選單樣式 */
+#sidebarMenu {
+    /* 基本樣式 */
+    width: 280px;
+    background-color: #fff;
+}
+
+#sidebarMenu .offcanvas-header {
+    /* 標題區域樣式 */
+    background-color: #198754;  /* 使用與登入按鈕相同的綠色 */
+    color: #fff;
+    padding: 1rem 1.5rem;
+}
+
+#sidebarMenu .btn-close {
+    /* 關閉按鈕樣式 */
+    filter: brightness(0) invert(1);  /* 將關閉按鈕變為白色 */
+}
+
+#sidebarMenu .list-group-item {
+    /* 選項樣式 */
+    border: none;
+    padding: 0.8rem 1.5rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+#sidebarMenu .list-group-item:hover {
+    /* 選項懸停效果 */
+    background-color: #f8f9fa;
+    color: #198754;  /* 懸停時變為主題綠色 */
+}
+
+#sidebarMenu hr {
+    /* 分隔線樣式 */
+    margin: 1rem 1.5rem;
+    color: #dee2e6;
+}
+
+/* 底部固定選項特殊樣式 */
+#sidebarMenu .offcanvas-body .list-group:last-child .list-group-item {
+    /* 底部選項樣式 */
+    color: #666;  /* 稍微淡一點的顏色 */
+    font-size: 0.9rem;  /* 稍微小一點的字體 */
+}
+
+#sidebarMenu .offcanvas-body .list-group:last-child .list-group-item:hover {
+    /* 底部選項懸停效果 */
+    color: #198754;
+}
+
+.hover-green:hover {
+    color: #198754 !important; /* Bootstrap 的 success 綠色 */
+}
+
+/* ====================================
+   1. 搜尋引擎區域的 nav-tabs 樣式
+   ==================================== */
+.search-box .nav-tabs .nav-link {
+    color: #198754;
+    border-color: #dee2e6;
+}
+
+.search-box .nav-tabs .nav-link:hover {
+    border-color: #198754;
+}
+
+.search-box .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* ====================================
+   2. 目的地選擇下拉選單的 nav-tabs 樣式
+   ==================================== */
+.location-dropdown .nav-tabs .nav-link {
+    color: #198754;
+    border-color: #dee2e6;
+    padding: 0.5rem 1rem;  /* 調整padding使下拉選單的標籤更緊湊 */
+}
+
+.location-dropdown .nav-tabs .nav-link:hover {
+    border-color: #198754;
+}
+
+.location-dropdown .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* ====================================
+   3. 目的地卡片展示區域的 nav-tabs 樣式
+   ==================================== */
+#cardcarousel .nav-tabs .nav-link {
+    color: #198754;
+    border-color: #dee2e6;
+}
+
+#cardcarousel .nav-tabs .nav-link:hover {
+    border-color: #198754;
+}
+
+#cardcarousel .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* ====================================
+   Header 固定樣式
+   ==================================== */
+.header-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 確保 header 在其他元素上方 */
+    background-color: #fff; /* 設置背景色，避免透明 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加陰影效果 */
+}
+
+/* 為了避免內容被固定的 header 遮擋，給 body 添加上邊距 */
+body {
+    padding-top: 60px; /* 根據 header 的實際高度調整 */
+}
+
+/* 在小螢幕上調整 padding */
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px; /* 較小的 padding */
+    }
+}
+
+/* 添加平滑滾動效果 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 下拉選單項目被點擊時的顏色 */
+.dropdown-item:active,
+.dropdown-item:focus {
+    background-color: #198754 !important; /* Bootstrap 的綠色 */
+    color: white !important;
+}
+
+/* 如果需要hover效果也是綠色 */
+.dropdown-item:hover {
+    background-color: rgba(25, 135, 84, 0.1) !important; /* 使用較淡的綠色 */
+    color: #198754 !important;
+}
+
+/* 隱私權政策頁面樣式 */
+.privacy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px; /* 添加上邊距，避免被 header 遮擋 */
+    display: flex;
+    gap: 30px;
+}
+
+/* 目錄樣式 */
+.privacy-toc {
+    width: 250px;
+    position: sticky;
+    top: 100px; /* 調整黏貼位置，避免被 header 遮擋 */
+    height: fit-content;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.privacy-toc h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.privacy-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.privacy-toc li {
+    margin-bottom: 10px;
+}
+
+.privacy-toc a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.privacy-toc a:hover {
+    color: #198754;
+}
+
+/* 主要內容樣式 */
+.privacy-content {
+    flex: 1;
+    min-width: 0; /* 防止 flex 項目溢出 */
+}
+
+.privacy-content h2 {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #198754;
+}
+
+/* RWD 設置 */
+@media (max-width: 768px) {
+    .privacy-container {
+        flex-direction: column;
+    }
+
+    .privacy-toc {
+        width: 100%;
+        position: relative;
+        top: 0;
+        margin-bottom: 20px;
+    }
+
+    .privacy-container {
+        padding-top: 60px; /* 在手機版調整上邊距 */
+    }
+}
+
+/* 側邊欄登入/註冊按鈕樣式 */
+.sidebar-auth-buttons {
+    padding: 0 15px;
+}
+
+.sidebar-auth-buttons .btn {
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-auth-buttons .btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.sidebar-auth-buttons .btn-outline-success {
     color: #198754;
     border-color: #198754;
 }
 
-.btn-outline-primary:hover,
-.btn-outline-primary:active,
-.btn-outline-primary.active {
-    color: #fff;
+.sidebar-auth-buttons .btn-outline-success:hover {
+    background-color: #198754;
+    color: white;
+}
+
+/* 登入/註冊頁面樣式 */
+.login-container {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    min-height: calc(100vh - 200px);
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.auth-form .form-control {
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.auth-form .btn {
+    padding: 10px 20px;
+}
+
+.social-login {
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+}
+
+.toggle-password {
+    border-left: none;
+}
+
+.toggle-password:focus {
+    box-shadow: none;
+}
+
+/* 切換按鈕樣式 */
+.btn-group .btn-outline-success.active {
+    background-color: #198754;
+    color: white;
+}
+
+/* 自定義 checkbox 顏色 */
+.form-check-input:checked {
     background-color: #198754;
     border-color: #198754;
 }
 
-/* 修改按鈕組的選中狀態 */
-.btn-check:checked + .btn-outline-primary {
-    color: #fff;
-    background-color: #198754;
+.form-check-input:focus {
     border-color: #198754;
-}
-
-/* 修改按鈕組的焦點狀態 */
-.btn-outline-primary:focus,
-.btn-outline-primary.focus {
     box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* 密碼輸入框組樣式 */
+.input-group .form-control {
+    height: 40px;  /* 統一輸入框高度 */
+    border-right: none;  /* 移除右邊框 */
+}
+
+.input-group .toggle-password {
+    height: 40px;  /* 統一按鈕高度 */
+    width: 40px;  /* 設定固定寬度 */
+    border: 1px solid #ced4da;  /* 與輸入框相同的邊框顏色 */
+    border-left: none;  /* 移除左邊框 */
+    background-color: white;  /* 設定白色背景 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;  /* 移除內邊距 */
+}
+
+.input-group .toggle-password i {
+    font-size: 16px;
+    color: #198754;  /* 主題綠色 */
+}
+
+.input-group .toggle-password i.fa-eye-slash {
+    color: #9ea8b1;  /* 斜線時使用淺灰色 */
+}
+
+.input-group .toggle-password:hover {
+    background-color: rgba(25, 135, 84, 0.1);  /* 懸停時的背景色改為淺綠色 */
+}
+
+.input-group .toggle-password:hover i.fa-eye {
+    color: #146c43;  /* 懸停時眼睛圖標顏色加深 */
+}
+
+.input-group .toggle-password:hover i.fa-eye-slash {
+    color: #495057;  /* 懸停時斜線圖標顏色稍微加深 */
+}
+
+/* 確保輸入框組在獲得焦點時的樣式正確 */
+.input-group:focus-within .form-control,
+.input-group:focus-within .toggle-password {
+    border-color: #198754;
+    box-shadow: none;
+}
+
+/* 社群登入按鈕樣式 */
+.social-login .btn {
+    min-width: 120px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 15px;
+}
+
+/* Google按鈕特殊樣式 */
+.social-login .btn-outline-success:first-child:hover {
+    background-color: #DB4437;  /* Google的品牌紅色 */
+    border-color: #DB4437;
+    color: white;
+}
+
+/* Facebook按鈕特殊樣式 */
+.social-login .btn-outline-primary:hover {
+    background-color: #1877F2;  /* Facebook的品牌色 */
+    border-color: #1877F2;
+}
+
+/* Apple按鈕特殊樣式 */
+.social-login .btn-outline-success:nth-child(3):hover {
+    background-color: #000000;  /* Apple的經典黑色 */
+    border-color: #000000;
+    color: white;
+}
+
+/* LINE按鈕特殊樣式 */
+.social-login .btn-outline-success:last-child:hover {
+    background-color: #06C755;  /* LINE的品牌色 */
+    border-color: #06C755;
+}
+
+/* 確保按鈕在小螢幕上也能正確顯示 */
+@media (max-width: 400px) {
+    .social-login .btn {
+        min-width: 100px;
+        font-size: 13px;
+        padding: 6px 12px;
+    }
 }

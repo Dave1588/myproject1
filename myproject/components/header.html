@@ -1,0 +1,122 @@
+<div class="header-sticky">
+    <div class="headerbox">
+        <div class="container pt-20 pb-20 mt-2" style="height: 40px;">
+            <div class="d-flex flex-wrap justify-content-between align-items-center flex-nowrap">
+                <!-- Logo 區域 -->
+                <div class="col-3 col-md-2">
+                    <a href="./index.html">
+                        <img class="logo" src="./img/logoheader.PNG" alt height="40">
+                    </a>
+                </div>
+                
+                <!-- 右側功能區 -->
+                <div class="header-social-icon mb-10 col-4 col-sm-8 justify-content-end d-flex flex-nowrap">
+                    <!-- 客服中心 -->
+                    <a href="#" style="color: black;display:inline-block; text-decoration: none; white-space: nowrap;" class="mb-0">客服中心</a>
+                    
+                    <!-- 訂單管理下拉選單 -->
+                    <div class="dropdown d-inline-block me-2 order-management-dropdown">  <!-- 添加特定類名 -->
+                        <button class="btn dropdown-toggle" type="button" id="orderManageDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true" style="color: black; background: none; border: none; padding: 4px 12px;">
+                            訂單管理
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="orderManageDropdown">
+                            <li><a class="dropdown-item order-link" href="#">會員訂單</a></li>  <!-- 添加特定類名 -->
+                            <li><a class="dropdown-item order-link" href="#">訪客訂單</a></li>  <!-- 添加特定類名 -->
+                        </ul>
+                    </div>
+                    <a href="login.html" style="background:#198754; color:white; display: inline-block; padding: 4px 12px; border-radius: 20px; text-decoration: none;" class="order-3 mt-1 mb-1 app-lg">
+                        <span class="text-nowrap">	
+                            <i class="fas fa-user me-2"></i>
+                            <span class="text-nowrap">登入</span>
+                        </span>
+                    </a>
+                    <a href="login.html?tab=register" style="color:#198754; display: inline-block; text-decoration: none;" class="order-3 mt-1 mb-1 app-lg">
+                        <span class="text-nowrap">	
+                            <i class="fas fa-user-plus fa-lg me-10 d-none" style="font-weight: medium;"></i> 
+                            <span class="text-nowrap">註冊</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 新增的橫向區塊 -->
+    <div class="horizontal-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-2">
+                <!-- 左側漢堡按鈕 -->
+                <div class="col-1">
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+                        <i class="fas fa-bars me-2"></i>
+                        <span class="d-none d-md-inline" style="white-space: nowrap;">總覽</span>
+                    </button>
+                </div>
+                
+                <!-- 右側六個等寬區域 -->
+                <div class="col-11 d-none d-md-block"> <!-- 添加 d-none d-md-block -->
+                    <div class="row">
+                        <div class="col-2 text-center"><a href="#" class="text-decoration-none text-dark hover-green">找機票</a></div>
+                        <div class="col-2 text-center"><a href="#" class="text-decoration-none text-dark hover-green">找住宿</a></div>
+                        <div class="col-2 text-center"><a href="#" class="text-decoration-none text-dark hover-green">找團體</a></div>
+                        <div class="col-2 text-center"><a href="#" class="text-decoration-none text-dark hover-green">找高鐵</a></div>
+                        <div class="col-2 text-center"><a href="#" class="text-decoration-none text-dark hover-green">找票券</a></div>
+                        <div class="col-2 text-center"><a href="#" class="text-decoration-none text-dark hover-green">APP下載</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 側邊欄 -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarMenuLabel">主選單</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- 登入/註冊按鈕 -->
+            <div class="sidebar-auth-buttons mb-3">
+                <a href="login.html" class="btn btn-success w-100 mb-2">
+                    <i class="fas fa-user me-2"></i>登入
+                </a>
+                <a href="login.html?tab=register" class="btn btn-outline-success w-100">
+                    <i class="fas fa-user-plus me-2"></i>註冊
+                </a>
+            </div>
+            
+            <!-- 主要選項 -->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-plane me-3"></i>找機票
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-hotel me-3"></i>找住宿
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-users me-3"></i>找團體
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-train me-3"></i>找高鐵
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-ticket-alt me-3"></i>找票券
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-mobile-alt me-3"></i>APP下載
+                </a>
+            </div>
+            
+            <!-- 分隔線 -->
+            <hr class="my-4">
+            
+            <!-- 底部固定選項 -->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">門市服務據點</a>
+                <a href="#" class="list-group-item list-group-item-action">旅遊資訊</a>
+                <a href="#" class="list-group-item list-group-item-action">菁英招募</a>
+                <a href="#" class="list-group-item list-group-item-action">聯絡神遊</a>
+            </div>
+        </div>
+    </div>
+</div>  
