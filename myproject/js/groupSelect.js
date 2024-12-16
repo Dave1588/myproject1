@@ -94,20 +94,7 @@ function validateGroupSearch() {
 /**
  * 搜尋團體行程
  */
-function searchGroups() {
-    if (!validateGroupSearch()) {
-        return;
-    }
-    
-    // 獲取搜尋條件
-    const searchData = {
-        departure: document.querySelector('#group-departure-dropdown .selected-text').textContent,
-        destination: document.querySelector('#group-destination-dropdown .selected-text').textContent,
-        startDate: document.getElementById('group-start-date').value,
-        endDate: document.getElementById('group-end-date').value,
-        status: document.querySelector('input[name="groupStatus"]:checked').value
-    };
-    
-    // 這裡添加搜尋邏輯
-    console.log('搜尋團體行程:', searchData);
-} 
+function searchGroups(event) {
+    event.preventDefault(); // 阻止表單提交
+    console.log('👥 團體行程搜尋');
+}

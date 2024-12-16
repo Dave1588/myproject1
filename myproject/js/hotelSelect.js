@@ -151,21 +151,43 @@ document.addEventListener('DOMContentLoaded', function() {
  * 搜尋住宿
  */
 function searchHotels() {
-    // 這裡添加搜尋邏輯
-    console.log('搜尋住宿:', hotelCounts);
+    event.preventDefault(); // 阻止表單提交
+    console.log('🏨 住宿搜尋');
 }
 
 // 初始化訂房人數選擇器
 function initializeHotelPeopleCount() {
+    // 檢查是否在訂房頁面
+    const hotelTab = document.getElementById('tab-hotels');
+    if (!hotelTab) {
+        return; // 如果不在訂房頁面，直接返回
+    }
+
+    // 獲取所有需要的元素
+    const elements = {
+        adultCount: document.getElementById('adult-count'),
+        adultMinus: document.getElementById('adult-minus'),
+        adultPlus: document.getElementById('adult-plus'),
+        childCount: document.getElementById('child-count'),
+        childMinus: document.getElementById('child-minus'),
+        childPlus: document.getElementById('child-plus')
+    };
+
+    // 檢查所有元素是否都存在
+    if (Object.values(elements).some(el => !el)) {
+        console.log('部分訂房相關元素不存在');
+        return;
+    }
+
     // 重置成人數量
-    document.getElementById('adult-count').textContent = '2';
-    document.getElementById('adult-minus').classList.remove('disabled');
-    document.getElementById('adult-plus').classList.remove('disabled');
+    elements.adultCount.textContent = '2';
+    elements.adultMinus.classList.remove('disabled');
+    elements.adultPlus.classList.remove('disabled');
     
     // 重置小孩數量
-    document.getElementById('child-count').textContent = '0';
-    document.getElementById('child-minus').classList.add('disabled');
-    document.getElementById('child-plus').classList.remove('disabled');
+    elements.childCount.textContent = '0';
+    elements.childMinus.classList.add('disabled');
+    elements.childPlus.classList.remove('disabled');
     
     // 重置顯示文字
     updateHotelPeopleDisplay();

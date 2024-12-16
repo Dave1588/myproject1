@@ -51,4 +51,9 @@ function swapLocations() {
     if (destinationText.textContent === '請選擇') {
         destinationText.classList.add('text-muted');
     }
+}
+
+function searchFlights(event) {
+    event.preventDefault(); // 阻止表單提交
+    console.log('✈️ 機票搜尋');
 } 

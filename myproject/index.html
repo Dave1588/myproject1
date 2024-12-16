@@ -372,7 +372,7 @@
                     <!-- 第三列：搜尋按鈕 -->
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success" style="width: 120px;" onclick="searchFlights()">搜尋</button>
+                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchFlights(event)">搜尋</button>
                         </div>
                     </div>
                 </form>
@@ -559,7 +559,7 @@
                     <!-- 搜尋按鈕 -->
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success" style="width: 120px;" onclick="searchHotels()">搜尋</button>
+                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchHotels()">搜尋</button>
                         </div>
                     </div>
                 </div>
@@ -788,7 +788,7 @@
                     <!-- 第四列：搜尋按鈕 -->
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
-                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchGroups()">搜尋</button>
+                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchGroups(event)">搜尋</button>
                         </div>
                     </div>
                 </div>
@@ -811,14 +811,14 @@
 
                     <!-- 第二列：出發地和目的地選擇 -->
                     <div class="row g-3 mb-3">
-                        <!-- 出發地 -->
+                        <!-- 高鐵出發站 -->
                         <div class="col-md-3">
                             <div class="dropdown w-100" id="hsr-departure-dropdown">
                                 <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="fw-bold">出發站</span>
                                     <span class="selected-text text-muted">請選擇</span>
                                 </button>
-                                <div class="dropdown-menu p-3">
+                                <div class="dropdown-menu p-3" style="max-height: 300px; overflow-y: auto;">
                                     <div class="d-grid gap-2">
                                         <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">南港</button>
                                         <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'departure')">台北</button>
@@ -844,14 +844,14 @@
                             </button>
                         </div>
 
-                        <!-- 目的地 -->
+                        <!-- 高鐵到達站 -->
                         <div class="col-md-3">
                             <div class="dropdown w-100" id="hsr-destination-dropdown">
                                 <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="fw-bold">到達站</span>
                                     <span class="selected-text text-muted">請選擇</span>
                                 </button>
-                                <div class="dropdown-menu p-3">
+                                <div class="dropdown-menu p-3" style="max-height: 300px; overflow-y: auto;">
                                     <div class="d-grid gap-2">
                                         <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">南港</button>
                                         <button class="btn btn-outline-secondary text-start" onclick="selectHsrStation(this, 'destination')">台北</button>
@@ -898,7 +898,7 @@
                     <!-- 搜尋按鈕 -->
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success" style="width: 120px;" onclick="searchHsr()">搜尋</button>
+                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchHsr(event)">搜尋</button>
                         </div>
                     </div>
                 </form>
@@ -920,7 +920,7 @@
                     <!-- 搜尋按鈕 -->
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
-                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchLocal()">搜尋</button>
+                            <button type="button" class="btn btn-success" style="width: 120px;" onclick="searchLocal(event)">搜尋</button>
                         </div>
                     </div>
                 </div>
@@ -1436,7 +1436,7 @@
               <!-- 大區塊3：圖片與文字內容 -->
               <div class="image-section">
                   <div class="image-container1">
-                      <a href="#" target="_blank" class="image-wrapper">
+                      <a href="javascript:void(0)" class="image-wrapper">
                           <div class="image" data-image-index="1">
                               <div class="image-text">
                                   <span class="text-left">左側文字</span>
@@ -1444,19 +1444,19 @@
                               </div>
                           </div>
                       </a>
-                      <a href="#" target="_blank" class="image-wrapper">
+                      <a href="javascript:void(0)" class="image-wrapper">
                           <div class="image" data-image-index="2"></div>
                       </a>
-                      <a href="#" target="_blank" class="image-wrapper">
+                      <a href="javascript:void(0)" class="image-wrapper">
                           <div class="image" data-image-index="3"></div>
                       </a>
-                      <a href="#" target="_blank" class="image-wrapper">
+                      <a href="javascript:void(0)" class="image-wrapper">
                           <div class="image" data-image-index="4"></div>
                       </a>
-                      <a href="#" target="_blank" class="image-wrapper">
+                      <a href="javascript:void(0)" class="image-wrapper">
                           <div class="image" data-image-index="5"></div>
                       </a>
-                      <a href="#" target="_blank" class="image-wrapper">
+                      <a href="javascript:void(0)" class="image-wrapper">
                           <div class="image" data-image-index="6"></div>
                       </a>
                   </div>
@@ -1500,5 +1500,6 @@
         </button>
     </div>
     <script src="js/customerService.js"></script>
+    <script src="js/localselect.js"></script>
 </body>
 </html>
