@@ -65,6 +65,9 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <div class="container" id="searchengine-title">
+        <h2>美好旅程，從這裡開始</h2>
+    </div>
 <!-- 這裡開始是searchengine -->
     <div class="search-box">
         <ul class="nav nav-tabs d-flex">
@@ -930,12 +933,10 @@
 <!-- 這裡開始是main -->
     <main class="main-content">
         <div>
-            <h1>歡迎來到我們的網站</h1>
-            <p>這裡是主要內容域，您可以在這裡放置更多訊息。</p>
             <div class="container mt-5" id="cardcarousel">
                 <!-- 新增的導航標籤 -->
                 <div class="d-flex flex-column flex-md-row justify-content-start align-items-md-center">
-                    <h2 class="me-md-5 mb-3 mb-md-0">旅遊目的地卡片展示</h2>
+                    <h2 class="me-md-5 mb-3 mb-md-0">熱門景點</h2>
                     <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">台灣</a>
@@ -958,9 +959,9 @@
                     <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                         <div class="carousel-container">
                           <!-- 左箭頭按鈕 移到分類外面 -->
-                          <button class="carousel-btn carousel-btn-left" onclick="moveLeft()">❮</button>
+                          <button class="carousel-btn carousel-btn-left" onclick="moveLeft()" id="card1-btn-left">❮</button>
                           <!-- 右箭頭按鈕 移到分類外面 -->
-                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()">❯</button>
+                          <button class="carousel-btn carousel-btn-right" onclick="moveRight()" id="card1-btn-right">❯</button>
                           
                           <div class="carousel">
                             <!-- 顯示9個卡片 -->

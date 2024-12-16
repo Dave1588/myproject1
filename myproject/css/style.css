@@ -145,22 +145,25 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgba(25, 135, 84, 0.15);
+    color: rgba(255, 255, 255, 0.9);
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 #cardcarousel .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(25, 135, 84, 0.9);
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 #cardcarousel .carousel-btn-left {
@@ -1335,4 +1338,77 @@ html {
 #tab-hsr .station-swap-btn:hover {
     color: #146c43;
     transform: scale(1.1);
+}
+
+/* 搜尋引擎標題樣式 */
+#searchengine-title {
+    padding: 0;  /* 移除預設的 padding */
+    margin: 30px auto 20px;  /* 上下間距調整 */
+    max-width: 1100px;  /* 與搜尋框寬度一致 */
+}
+
+#searchengine-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    padding: 0 20px;  /* 與搜尋框內部 padding 一致 */
+    position: relative;
+    display: inline-block;
+}
+
+/* 標題裝飾效果 */
+#searchengine-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 20px;  /* 與 padding-left 一致 */
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #198754, #11d073);
+    border-radius: 2px;
+}
+
+/* 標題文字漸層效果 */
+#searchengine-title h2 {
+    background: linear-gradient(45deg, #198754, #11d073);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 在小螢幕上調整標題大小 */
+@media (max-width: 768px) {
+    #searchengine-title h2 {
+        font-size: 2rem;
+    }
+}
+
+/* 輪播按鈕基本樣式 */
+#cardcarousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: rgba(25, 135, 84, 0.15); /* 降低背景透明度 */
+    color: rgba(255, 255, 255, 0.9); /* 提高圖標透明度 */
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+/* 按鈕懸停效果 */
+#cardcarousel .carousel-btn:hover {
+    background-color: rgba(25, 135, 84, 0.9); /* hover 時幾乎不透明 */
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
