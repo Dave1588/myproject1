@@ -1192,3 +1192,54 @@ html {
         padding: 6px 12px;
     }
 }
+
+/* 智慧線上客服按鈕樣式 */
+.customer-service-btn {
+    position: fixed;
+    bottom: 90px;  /* 位置在返回頂部按鈕上方 */
+    right: 20px;
+    z-index: 1000;
+}
+
+.cs-button {
+    background-color: #198754;  /* 使用網站主題綠色 */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.cs-button:hover {
+    background-color: #146c43;  /* 深一點的綠色 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cs-button i {
+    font-size: 20px;
+}
+
+/* 在小螢幕上只顯示圖標 */
+@media (max-width: 768px) {
+    .cs-button span {
+        display: none;
+    }
+    
+    .cs-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .cs-button i {
+        margin: 0;
+    }
+}
