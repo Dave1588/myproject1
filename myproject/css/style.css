@@ -1757,3 +1757,55 @@ html {
         height: 140px;  /* 較小螢幕上縮小內容區域高度 */
     }
 }
+
+/* ====================================
+   21. 假期文字樣式
+   ==================================== */
+#image-text-holiday {
+    color: #ffffff;  /* 白色文字 */
+    font-weight: 700;  /* 粗體 */
+    font-size: 1.5rem;  /* 更大的字體大小 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* 添加文字陰影提高可讀性 */
+    margin-bottom: 0.5rem;  /* 底部間距 */
+}
+
+/* ====================================
+   22. 五個分類按鈕樣式
+   ==================================== */
+#category-5buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* 設定按鈕之間的間距 */
+    margin: 20px 0;  /* 上下間距 */
+}
+
+#category-5buttons .btn {
+    min-width: 100px;  /* 確保按鈕有最小寬度 */
+    padding: 8px 16px;  /* 按鈕內部間距 */
+    transition: all 0.3s ease;  /* 平滑過渡效果 */
+}
+
+#category-5buttons .btn:hover {
+    transform: translateY(-2px);  /* 懸停時輕微上移效果 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  /* 懸停時添加陰影 */
+}
+
+.firecracker-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.firecracker-icon {
+    color: #ff4d4d;
+    animation: firecracker 2s infinite;
+}
+
+.spark-icon {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: #ffd700;
+    font-size: 0.6em;
+    animation: sparkle 1.5s infinite;
+}
